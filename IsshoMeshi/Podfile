@@ -7,5 +7,7 @@ target 'IsshoMeshi' do
   pod 'SwiftyJSON'
   pod 'RxSwift',    '~> 2.0'
   pod 'RxCocoa',    '~> 2.0'
+  pod 'Hakuba'
+  pod 'Sapporo'
 end
 
