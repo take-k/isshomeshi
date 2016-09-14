@@ -22,8 +22,10 @@ class ViewController: UIViewController {
         
         
         let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
-            return FriendCellModel(title: title, selectionHandler: { cell in
+            let cellmodel = FriendCellModel(title: title, selectionHandler: { cell in
             })
+            cellmodel.height = 120
+            return cellmodel
         }
         self.hakuba.reset(Section().reset(cellModels).bump()).bump()
         retrieveUsers()
@@ -36,8 +38,10 @@ class ViewController: UIViewController {
             case .Success(let value):
                 let json = JSON(value)
                 let friendModels = json.map({ (key,json) -> FriendCellModel in
-                    return FriendCellModel(title: (json["name"].string ?? "タケダ"), selectionHandler: { cell in
+                    let frined = FriendCellModel(title: (json["name"].string ?? "タケダ"), selectionHandler: { cell in
                     })
+                    frined.height = 120
+                    return frined
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
             case .Failure(let error):
