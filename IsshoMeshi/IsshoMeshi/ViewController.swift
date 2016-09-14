@@ -19,15 +19,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
-            let cellmodel = FriendCellModel(title: title, selectionHandler: { cell in
-            })
-            cellmodel.height = 120
-            return cellmodel
-        }
-        self.hakuba.reset(Section().reset(cellModels).bump()).bump()
+//        
+//        
+//        let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
+//            let cellmodel = FriendCellModel(title: title, selectionHandler: { cell in
+//            })
+//            cellmodel.height = 120
+//            return cellmodel
+//        }
+        let friend = FriendCellModel(
+            name: "タケダ",
+            imageUrl: "http://example.com",
+            ienow:  0,
+            selectionHandler: { cell in
+        })
+        friend.height = 120
+        self.hakuba.reset(Section().reset(friend).bump())
         retrieveUsers()
     }
     
@@ -38,10 +45,14 @@ class ViewController: UIViewController {
             case .Success(let value):
                 let json = JSON(value)
                 let friendModels = json.map({ (key,json) -> FriendCellModel in
-                    let frined = FriendCellModel(title: (json["name"].string ?? "タケダ"), selectionHandler: { cell in
+                    let friend = FriendCellModel(
+                        name: json["name"].string ?? "タケダ",
+                        imageUrl: json["image_url"].string ?? "http://example.com",
+                        ienow: json["ienow"].int ?? 0,
+                        selectionHandler: { cell in
                     })
-                    frined.height = 120
-                    return frined
+                    friend.height = 120
+                    return friend
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
             case .Failure(let error):

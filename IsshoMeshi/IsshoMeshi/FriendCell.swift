@@ -8,12 +8,17 @@
 
 import UIKit
 import Hakuba
+import AlamofireImage
 
 class FriendCellModel: CellModel {
-    let title: String
-    
-    init(title: String, selectionHandler: SelectionHandler) {
-        self.title = title
+    let name :String
+    let imageUrl:String
+    let ienow:Int
+
+    init(name: String,imageUrl:String,ienow:Int, selectionHandler: SelectionHandler) {
+        self.name = name
+        self.imageUrl = imageUrl
+        self.ienow = ienow
         super.init(cell: FriendCell.self, selectionHandler: selectionHandler)
     }
 }
@@ -21,14 +26,20 @@ class FriendCellModel: CellModel {
 class FriendCell: Cell,CellType {
     typealias CellModel = FriendCellModel
     
-    @IBOutlet weak var titleLabel: Label!
+    @IBOutlet weak var ienowButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
     
     override func configure() {
         guard let cellmodel = cellmodel else {
             return
         }
-        self.textLabel?.text = cellmodel.title + "(\(cellmodel.indexPath.section),\(cellmodel.indexPath.row))"
-//        titleLabel.text = cellmodel.title + "(\(cellmodel.indexPath.section),\(cellmodel.indexPath.row))"
+        nameLabel.text = cellmodel.name
+        ienowButton.setTitle("\(cellmodel.ienow)", forState: .Normal)
+        if let url = NSURL(string: cellmodel.imageUrl) {
+            userImageView.af_setImageWithURL(url)
+        }
+        
     }
     
     override func willDisplay(tableView: UITableView) {
