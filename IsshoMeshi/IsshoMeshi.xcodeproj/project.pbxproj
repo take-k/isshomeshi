@@ -66,6 +66,7 @@
 		413E292E1D899865000E55AE /* config */ = {
 			isa = PBXGroup;
 			children = (
+				416867B71D89913400101D4A /* AppDelegate.swift */,
 				416867C01D89913400101D4A /* LaunchScreen.storyboard */,
 				416867C31D89913400101D4A /* Info.plist */,
 				416867BE1D89913400101D4A /* Assets.xcassets */,
@@ -76,7 +77,6 @@
 		413E292F1D899870000E55AE /* services */ = {
 			isa = PBXGroup;
 			children = (
-				416867B71D89913400101D4A /* AppDelegate.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
