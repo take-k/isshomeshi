@@ -8,7 +8,7 @@
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    static let baseURLString = "localhost:3000"
+    static let baseURLString = "http://localhost:3000"
     
     case USERS
     case USERS_COUNTER_UPDATE([String:AnyObject]?)
