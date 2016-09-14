@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--一緒メシを誘おう！-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IsshoMeshi" sceneMemberID="viewController">
+                <viewController title="一緒メシを誘おう！" id="BYZ-38-t0r" customClass="ViewController" customModule="IsshoMeshi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8C-sw-Djq" id="lEa-zy-1Il">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utk-VG-gaZ">
@@ -54,11 +54,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd">
+                                <rect key="frame" x="456" y="466" width="144" height="134"/>
+                                <state key="normal" image="ienow"/>
+                                <connections>
+                                    <action selector="ienowTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVW-vq-pPt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mD9-3L-CBa" secondAttribute="bottom" id="33N-Zc-rix"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" id="OdI-PE-7Tq"/>
                             <constraint firstAttribute="trailing" secondItem="mD9-3L-CBa" secondAttribute="trailing" id="Z3B-hJ-wW8"/>
+                            <constraint firstAttribute="trailing" secondItem="07r-7j-zHd" secondAttribute="trailing" id="hW3-9q-z77"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ieT-01-wZJ"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="v94-E3-7hR"/>
                         </constraints>
@@ -91,5 +100,6 @@
     </scenes>
     <resources>
         <image name="button" width="118" height="118"/>
+        <image name="ienow" width="149" height="145"/>
     </resources>
 </document>

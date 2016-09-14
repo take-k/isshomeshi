@@ -24,14 +24,14 @@ enum Router {
             case .USERS:
                 return (.GET, "/users.json", nil)
             case .USERS_COUNTER_UPDATE(let params):
-                return (.GET, "/users.json", params)
+                return (.PUT, "/users/1.json", params)
             case .USERS_NEW(let params):
                 return (.GET, "/users.json", params)
             case .USERS_UPDATE(let params):
-                return (.GET, "/users.json", params)
+                return (.GET, "/users/", params)
             }
         }()
         
-        return Alamofire.request(method, Router.baseURLString + path, parameters: parameters)
+        return Alamofire.request(method, Router.baseURLString + path, parameters: parameters,encoding: .JSON)
     }
 }

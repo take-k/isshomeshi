@@ -19,14 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//        
-//        let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
-//            let cellmodel = FriendCellModel(title: title, selectionHandler: { cell in
-//            })
-//            cellmodel.height = 120
-//            return cellmodel
-//        }
+        self.title = "一緒メシを誘おう！"
         let friend = FriendCellModel(
             name: "タケダ",
             imageUrl: "http://example.com",
@@ -36,6 +29,15 @@ class ViewController: UIViewController {
         friend.height = 120
         self.hakuba.reset(Section().reset(friend).bump())
         retrieveUsers()
+    }
+    
+    @IBAction func ienowTapped(sender: AnyObject) {
+        guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
+            return
+        }
+        model.ienow += 1
+        model.bump()
+        sendIenow()
     }
     
     func retrieveUsers(){
@@ -60,7 +62,21 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
+    
+    func sendIenow() {
+        guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
+            return
+        }
+        
+        Router.USERS_COUNTER_UPDATE(["ienow":model.ienow]).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+            case .Failure(let error):
+                break
+            }
+        }
+    }
 }
 

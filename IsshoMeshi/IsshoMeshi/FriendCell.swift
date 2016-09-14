@@ -13,7 +13,7 @@ import AlamofireImage
 class FriendCellModel: CellModel {
     let name :String
     let imageUrl:String
-    let ienow:Int
+    var ienow:Int
 
     init(name: String,imageUrl:String,ienow:Int, selectionHandler: SelectionHandler) {
         self.name = name
