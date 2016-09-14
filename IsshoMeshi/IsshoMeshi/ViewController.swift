@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Hakuba
+
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
+            return FriendCellModel(title: "ほげ", selectionHandler: { cell in
+            })
+        }
+        self.hakuba.reset(Section().reset(cellModels).bump()).bump()
     }
 
     override func didReceiveMemoryWarning() {

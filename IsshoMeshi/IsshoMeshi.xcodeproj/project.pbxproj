@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		202DD4FA62A6DFCF78AEB95B /* Pods_IsshoMeshi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCFCCA2E5AFBAE4F4E88245 /* Pods_IsshoMeshi.framework */; };
-		413E29311D899C4B000E55AE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E29301D899C4B000E55AE /* FriendsViewController.swift */; };
 		416867B81D89913400101D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416867B71D89913400101D4A /* AppDelegate.swift */; };
 		416867BA1D89913400101D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416867B91D89913400101D4A /* ViewController.swift */; };
 		416867BD1D89913400101D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867BB1D89913400101D4A /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		413E29301D899C4B000E55AE /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		416867B41D89913400101D4A /* IsshoMeshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsshoMeshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416867B71D89913400101D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		416867B91D89913400101D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				416867B91D89913400101D4A /* ViewController.swift */,
-				413E29301D899C4B000E55AE /* FriendsViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -249,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				416867BA1D89913400101D4A /* ViewController.swift in Sources */,
-				413E29311D899C4B000E55AE /* FriendsViewController.swift in Sources */,
 				416867B81D89913400101D4A /* AppDelegate.swift in Sources */,
 				41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */,
 			);

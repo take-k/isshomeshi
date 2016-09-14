@@ -27,8 +27,8 @@ class FriendCell: Cell,CellType {
         guard let cellmodel = cellmodel else {
             return
         }
-        
-        titleLabel.text = cellmodel.title + "(\(cellmodel.indexPath.section),\(cellmodel.indexPath.row))"
+        self.textLabel?.text = cellmodel.title + "(\(cellmodel.indexPath.section),\(cellmodel.indexPath.row))"
+//        titleLabel.text = cellmodel.title + "(\(cellmodel.indexPath.section),\(cellmodel.indexPath.row))"
     }
     
     override func willDisplay(tableView: UITableView) {
