@@ -14,6 +14,7 @@
 		416867BD1D89913400101D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867BB1D89913400101D4A /* Main.storyboard */; };
 		416867BF1D89913400101D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416867BE1D89913400101D4A /* Assets.xcassets */; };
 		416867C21D89913400101D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867C01D89913400101D4A /* LaunchScreen.storyboard */; };
+		41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE40AD1D89A4AA00A33495 /* FriendCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		416867BE1D89913400101D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		416867C11D89913400101D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		416867C31D89913400101D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41BE40AD1D89A4AA00A33495 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		C1B4151E65E4B74398FCF574 /* Pods-IsshoMeshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A323917852F16A09473102 /* Pods-IsshoMeshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.release.xcconfig"; sourceTree = "<group>"; };
 		EBCFCCA2E5AFBAE4F4E88245 /* Pods_IsshoMeshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsshoMeshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 		413E292D1D899849000E55AE /* views */ = {
 			isa = PBXGroup;
 			children = (
+				41BE40AD1D89A4AA00A33495 /* FriendCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				416867BA1D89913400101D4A /* ViewController.swift in Sources */,
 				413E29311D899C4B000E55AE /* FriendsViewController.swift in Sources */,
 				416867B81D89913400101D4A /* AppDelegate.swift in Sources */,
+				41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
