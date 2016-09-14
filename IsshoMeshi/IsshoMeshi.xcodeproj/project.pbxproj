@@ -48,6 +48,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		413E292C1D89983D000E55AE /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				416867B91D89913400101D4A /* ViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		413E292D1D899849000E55AE /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		413E292E1D899865000E55AE /* config */ = {
+			isa = PBXGroup;
+			children = (
+				416867C01D89913400101D4A /* LaunchScreen.storyboard */,
+				416867C31D89913400101D4A /* Info.plist */,
+				416867BE1D89913400101D4A /* Assets.xcassets */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		413E292F1D899870000E55AE /* services */ = {
+			isa = PBXGroup;
+			children = (
+				416867B71D89913400101D4A /* AppDelegate.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
 		416867AB1D89913400101D4A = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +102,11 @@
 		416867B61D89913400101D4A /* IsshoMeshi */ = {
 			isa = PBXGroup;
 			children = (
-				416867B71D89913400101D4A /* AppDelegate.swift */,
-				416867B91D89913400101D4A /* ViewController.swift */,
 				416867BB1D89913400101D4A /* Main.storyboard */,
-				416867BE1D89913400101D4A /* Assets.xcassets */,
-				416867C01D89913400101D4A /* LaunchScreen.storyboard */,
-				416867C31D89913400101D4A /* Info.plist */,
+				413E292F1D899870000E55AE /* services */,
+				413E292E1D899865000E55AE /* config */,
+				413E292C1D89983D000E55AE /* viewcontrollers */,
+				413E292D1D899849000E55AE /* views */,
 			);
 			path = IsshoMeshi;
 			sourceTree = "<group>";
