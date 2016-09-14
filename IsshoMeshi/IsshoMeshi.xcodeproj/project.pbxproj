@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		202DD4FA62A6DFCF78AEB95B /* Pods_IsshoMeshi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCFCCA2E5AFBAE4F4E88245 /* Pods_IsshoMeshi.framework */; };
+		416867B81D89913400101D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416867B71D89913400101D4A /* AppDelegate.swift */; };
+		416867BA1D89913400101D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416867B91D89913400101D4A /* ViewController.swift */; };
+		416867BD1D89913400101D4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867BB1D89913400101D4A /* Main.storyboard */; };
+		416867BF1D89913400101D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416867BE1D89913400101D4A /* Assets.xcassets */; };
+		416867C21D89913400101D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867C01D89913400101D4A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		416867B41D89913400101D4A /* IsshoMeshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsshoMeshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		416867B71D89913400101D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		416867B91D89913400101D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		416867BC1D89913400101D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		416867BE1D89913400101D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		416867C11D89913400101D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		416867C31D89913400101D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B4151E65E4B74398FCF574 /* Pods-IsshoMeshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.debug.xcconfig"; sourceTree = "<group>"; };
+		E6A323917852F16A09473102 /* Pods-IsshoMeshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.release.xcconfig"; sourceTree = "<group>"; };
+		EBCFCCA2E5AFBAE4F4E88245 /* Pods_IsshoMeshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsshoMeshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		416867B11D89913400101D4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				202DD4FA62A6DFCF78AEB95B /* Pods_IsshoMeshi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CB0B347D44780166A646F45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBCFCCA2E5AFBAE4F4E88245 /* Pods_IsshoMeshi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		416867AB1D89913400101D4A = {
+			isa = PBXGroup;
+			children = (
+				416867B61D89913400101D4A /* IsshoMeshi */,
+				416867B51D89913400101D4A /* Products */,
+				B750383DBB82DF8528030FF5 /* Pods */,
+				2CB0B347D44780166A646F45 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		416867B51D89913400101D4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				416867B41D89913400101D4A /* IsshoMeshi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		416867B61D89913400101D4A /* IsshoMeshi */ = {
+			isa = PBXGroup;
+			children = (
+				416867B71D89913400101D4A /* AppDelegate.swift */,
+				416867B91D89913400101D4A /* ViewController.swift */,
+				416867BB1D89913400101D4A /* Main.storyboard */,
+				416867BE1D89913400101D4A /* Assets.xcassets */,
+				416867C01D89913400101D4A /* LaunchScreen.storyboard */,
+				416867C31D89913400101D4A /* Info.plist */,
+			);
+			path = IsshoMeshi;
+			sourceTree = "<group>";
+		};
+		B750383DBB82DF8528030FF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1B4151E65E4B74398FCF574 /* Pods-IsshoMeshi.debug.xcconfig */,
+				E6A323917852F16A09473102 /* Pods-IsshoMeshi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		416867B31D89913400101D4A /* IsshoMeshi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 416867C61D89913400101D4A /* Build configuration list for PBXNativeTarget "IsshoMeshi" */;
+			buildPhases = (
+				47F4F3F16DA458505F9769AA /* [CP] Check Pods Manifest.lock */,
+				416867B01D89913400101D4A /* Sources */,
+				416867B11D89913400101D4A /* Frameworks */,
+				416867B21D89913400101D4A /* Resources */,
+				35C93F4B4AAEB40FC357285E /* [CP] Embed Pods Frameworks */,
+				63766BDF58C27C6326EC9540 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IsshoMeshi;
+			productName = IsshoMeshi;
+			productReference = 416867B41D89913400101D4A /* IsshoMeshi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		416867AC1D89913400101D4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = teame;
+				TargetAttributes = {
+					416867B31D89913400101D4A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 416867AF1D89913400101D4A /* Build configuration list for PBXProject "IsshoMeshi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 416867AB1D89913400101D4A;
+			productRefGroup = 416867B51D89913400101D4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				416867B31D89913400101D4A /* IsshoMeshi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		416867B21D89913400101D4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416867C21D89913400101D4A /* LaunchScreen.storyboard in Resources */,
+				416867BF1D89913400101D4A /* Assets.xcassets in Resources */,
+				416867BD1D89913400101D4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35C93F4B4AAEB40FC357285E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47F4F3F16DA458505F9769AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		63766BDF58C27C6326EC9540 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		416867B01D89913400101D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416867BA1D89913400101D4A /* ViewController.swift in Sources */,
+				416867B81D89913400101D4A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		416867BB1D89913400101D4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				416867BC1D89913400101D4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		416867C01D89913400101D4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				416867C11D89913400101D4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		416867C41D89913400101D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		416867C51D89913400101D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		416867C71D89913400101D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B4151E65E4B74398FCF574 /* Pods-IsshoMeshi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IsshoMeshi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = teame.IsshoMeshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		416867C81D89913400101D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A323917852F16A09473102 /* Pods-IsshoMeshi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IsshoMeshi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = teame.IsshoMeshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		416867AF1D89913400101D4A /* Build configuration list for PBXProject "IsshoMeshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416867C41D89913400101D4A /* Debug */,
+				416867C51D89913400101D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		416867C61D89913400101D4A /* Build configuration list for PBXNativeTarget "IsshoMeshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416867C71D89913400101D4A /* Debug */,
+				416867C81D89913400101D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 416867AC1D89913400101D4A /* Project object */;
+}
