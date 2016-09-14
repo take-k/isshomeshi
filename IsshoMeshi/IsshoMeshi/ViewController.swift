@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         
         let cellModels = ["タケダ","クボ","ハラダ","コモリ"].map { (title) -> CellModel in
-            return FriendCellModel(title: "ほげ", selectionHandler: { cell in
+            return FriendCellModel(title: title, selectionHandler: { cell in
             })
         }
         self.hakuba.reset(Section().reset(cellModels).bump()).bump()
