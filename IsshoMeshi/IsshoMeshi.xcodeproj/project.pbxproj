@@ -106,10 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				416867BB1D89913400101D4A /* Main.storyboard */,
-				413E292F1D899870000E55AE /* services */,
-				413E292E1D899865000E55AE /* config */,
 				413E292C1D89983D000E55AE /* viewcontrollers */,
 				413E292D1D899849000E55AE /* views */,
+				413E292F1D899870000E55AE /* services */,
+				413E292E1D899865000E55AE /* config */,
 			);
 			path = IsshoMeshi;
 			sourceTree = "<group>";
