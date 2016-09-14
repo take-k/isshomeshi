@@ -32,6 +32,6 @@ enum Router {
             }
         }()
         
-        return Alamofire.request(.GET, Router.baseURLString + path, parameters: parameters)
+        return Alamofire.request(method, Router.baseURLString + path, parameters: parameters)
     }
 }
