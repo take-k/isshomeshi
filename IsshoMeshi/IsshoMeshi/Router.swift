@@ -7,7 +7,7 @@
 //
 import Alamofire
 
-enum Router: URLRequestConvertible {
+enum Router {
     static let baseURLString = "http://localhost:3000"
     
     case USERS
@@ -16,26 +16,22 @@ enum Router: URLRequestConvertible {
     case USERS_UPDATE([String:AnyObject]?)
     
     
-    var URLRequest: NSMutableURLRequest {
+    var request: Request {
         
-        let (method, path, parameters) : (String, String, [String: AnyObject]?) = {
+        let (method, path, parameters) : (Method, String, [String: AnyObject]?) = {
             
             switch self {
             case .USERS:
-                return ("POST", "/users.json", nil)
+                return (.GET, "/users.json", nil)
             case .USERS_COUNTER_UPDATE(let params):
-                return ("GET", "/users.json", params)
+                return (.GET, "/users.json", params)
             case .USERS_NEW(let params):
-                return ("GET", "/users.json", params)
+                return (.GET, "/users.json", params)
             case .USERS_UPDATE(let params):
-                return ("GET", "/users.json", params)
+                return (.GET, "/users.json", params)
             }
         }()
         
-        let URL = NSURL(string: Router.baseURLString)
-        let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
-        URLRequest.HTTPMethod = method
-        let encoding = Alamofire.ParameterEncoding.URL
-        return encoding.encode(URLRequest, parameters: parameters).0
+        return Alamofire.request(.GET, Router.baseURLString + path, parameters: parameters)
     }
 }

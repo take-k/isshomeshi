@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     func retrieveUsers(){
-        Alamofire.request(Router.USERS).responseJSON { (response) in
+        Router.USERS.request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
