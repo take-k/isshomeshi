@@ -104,7 +104,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button" width="118" height="118"/>
-        <image name="ienow" width="149" height="145"/>
+        <image name="button" width="47" height="47"/>
+        <image name="ienow" width="141" height="127"/>
     </resources>
 </document>
