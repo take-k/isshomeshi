@@ -10,7 +10,7 @@ import UIKit
 import Hakuba
 import Alamofire
 import SwiftyJSON
-
+//
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
