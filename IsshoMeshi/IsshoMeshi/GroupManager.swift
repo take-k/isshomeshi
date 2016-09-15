@@ -18,6 +18,8 @@ class GroupManager {
     let nextButton: UIButton
     let label: UILabel
     
+    let viewController:ViewController? = nil
+    
     private init() {
         let layout = SAFlowLayout()
         layout.scrollDirection = .Horizontal
@@ -70,6 +72,14 @@ class GroupManager {
             label.hidden = true
             nextButton.hidden = false
         }
+    }
+    
+    func nextTapped(sendor:UIButton){
+        guard let navController = viewController?.navigationController else {
+            return
+        }
+        
+        //navController.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
     }
 
 }
