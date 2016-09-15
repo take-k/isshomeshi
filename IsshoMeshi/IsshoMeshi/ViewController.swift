@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             ienow:  0,
             selectionHandler: { cell in
         })
-        friend.height = 120
+        friend.height = 60
         self.hakuba.reset(Section().reset(friend).bump())
         retrieveUsers()
     }
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
                             GroupManager.sharedInstance.addMemberWithName(model.name, imageUrl: model.imageUrl, ienow: model.ienow)
                         }
                     )
-                    friend.height = 120
+                    friend.height = 60
 
                     return friend
                 })

@@ -30,6 +30,7 @@ class GroupManager {
         nextButton = UIButton(type: .Custom)
         nextButton.frame = CGRectMake(width - 90 , 64, 90, 80)
         nextButton.backgroundColor = UIColor.myLightGreen()
+        nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
         
         self.sapporo.registerCellByNib(MemberCell)
         self.sapporo.setLayout(layout)
