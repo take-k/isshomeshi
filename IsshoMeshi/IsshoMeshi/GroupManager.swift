@@ -70,9 +70,6 @@ class GroupManager {
             label.hidden = true
             nextButton.hidden = false
         }
-        
-        //memberModels.append(member)
-        
     }
 
 }
