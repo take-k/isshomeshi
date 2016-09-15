@@ -192,18 +192,20 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menulogo" translatesAutoresizingMaskIntoConstraints="NO" id="2bl-PP-5Rq">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="同期中・・・" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-VV-HgY">
-                                            <rect key="frame" x="244" y="112" width="112" height="32"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同期中・・・" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-VV-HgY">
+                                            <rect key="frame" x="265" y="130" width="70" height="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-r8-yAi">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-r8-yAi">
                                             <rect key="frame" x="559" y="112" width="33" height="34"/>
                                             <state key="normal" backgroundImage="menuadd"/>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="AYG-r8-yAi" secondAttribute="trailing" constant="8" id="1U3-hI-eHQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="AYG-r8-yAi" secondAttribute="bottom" constant="4" id="Iwg-4h-7cM"/>
                                         <constraint firstAttribute="bottom" secondItem="QYg-VV-HgY" secondAttribute="bottom" constant="6" id="Nmc-6Z-cck"/>
                                         <constraint firstItem="2bl-PP-5Rq" firstAttribute="leading" secondItem="tCn-Ah-8Xf" secondAttribute="leading" id="qmH-kd-UTa"/>
                                         <constraint firstItem="2bl-PP-5Rq" firstAttribute="top" secondItem="tCn-Ah-8Xf" secondAttribute="top" id="qmN-hz-DvG"/>
