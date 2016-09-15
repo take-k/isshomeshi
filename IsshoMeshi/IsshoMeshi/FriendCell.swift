@@ -26,19 +26,23 @@ class FriendCellModel: CellModel {
 class FriendCell: Cell,CellType {
     typealias CellModel = FriendCellModel
     
-    @IBOutlet weak var ienowButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var badgeImageView: UIImageView!
+    @IBOutlet weak var badgeLabel: UILabel!
     
     override func configure() {
         guard let cellmodel = cellmodel else {
             return
         }
+        
         nameLabel.text = cellmodel.name
-        ienowButton.setTitle("\(cellmodel.ienow)", forState: .Normal)
+        badgeLabel.text = "\(cellmodel.ienow)"
+        
         if let url = NSURL(string: cellmodel.imageUrl) {
             userImageView.af_setImageWithURL(url)
         }
+        userImageView.layer.cornerRadius = 25
         
     }
     

@@ -29,26 +29,47 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utk-VG-gaZ">
-                                                    <rect key="frame" x="27" y="7" width="44" height="44"/>
+                                                    <rect key="frame" x="21" y="5" width="50" height="50"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タケダ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-dL-rdb">
-                                                    <rect key="frame" x="79" y="7" width="218" height="44"/>
+                                                    <rect key="frame" x="79" y="7" width="134" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-Lo-tcH">
-                                                    <rect key="frame" x="366" y="0.0" width="51" height="51"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
-                                                    <state key="normal" title="0" backgroundImage="button">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8Y-tK-mGO">
+                                                    <rect key="frame" x="270" y="2" width="47" height="47"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="KSW-vX-KXJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-Yv-GxQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="47" id="13G-7v-GU2"/>
+                                                        <constraint firstItem="KSW-vX-KXJ" firstAttribute="top" secondItem="A8Y-tK-mGO" secondAttribute="top" id="7Fq-dS-2eO"/>
+                                                        <constraint firstItem="ayF-Yv-GxQ" firstAttribute="leading" secondItem="A8Y-tK-mGO" secondAttribute="leading" id="NTa-Od-EN9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KSW-vX-KXJ" secondAttribute="bottom" id="PHk-R5-940"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ayF-Yv-GxQ" secondAttribute="bottom" id="hMH-eh-zHZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KSW-vX-KXJ" secondAttribute="trailing" id="ikD-ML-q95"/>
+                                                        <constraint firstAttribute="width" constant="47" id="pBV-ef-BsF"/>
+                                                        <constraint firstItem="ayF-Yv-GxQ" firstAttribute="top" secondItem="A8Y-tK-mGO" secondAttribute="top" id="sip-7s-hOJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ayF-Yv-GxQ" secondAttribute="trailing" id="tdp-xt-Wjc"/>
+                                                        <constraint firstItem="KSW-vX-KXJ" firstAttribute="leading" secondItem="A8Y-tK-mGO" secondAttribute="leading" id="upF-9i-pAj"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="ienowButton" destination="wbW-Lo-tcH" id="A0H-ea-Bhw"/>
+                                            <outlet property="badgeImageView" destination="KSW-vX-KXJ" id="yVO-8g-yVG"/>
+                                            <outlet property="badgeLabel" destination="ayF-Yv-GxQ" id="MwL-CB-4gb"/>
                                             <outlet property="nameLabel" destination="qu4-dL-rdb" id="hto-YY-hxg"/>
                                             <outlet property="userImageView" destination="utk-VG-gaZ" id="IXk-Yz-9qI"/>
                                         </connections>
@@ -104,7 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button" width="47" height="47"/>
+        <image name="badge" width="47" height="47"/>
         <image name="ienow" width="141" height="127"/>
     </resources>
 </document>
