@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="120"/>
@@ -46,6 +46,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="ienowButton" destination="wbW-Lo-tcH" id="A0H-ea-Bhw"/>
                                             <outlet property="nameLabel" destination="qu4-dL-rdb" id="hto-YY-hxg"/>
@@ -69,7 +70,7 @@
                             <constraint firstAttribute="trailing" secondItem="mD9-3L-CBa" secondAttribute="trailing" id="Z3B-hJ-wW8"/>
                             <constraint firstAttribute="trailing" secondItem="07r-7j-zHd" secondAttribute="trailing" id="hW3-9q-z77"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ieT-01-wZJ"/>
-                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="v94-E3-7hR"/>
+                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="v94-E3-7hR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vko-d5-KEc"/>
@@ -88,6 +89,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hS3-mu-FW1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.70196078431372544" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99980520780000004" green="0.97929884609999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hJl-za-Ymy"/>

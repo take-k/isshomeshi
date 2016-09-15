@@ -12,11 +12,13 @@ import Sapporo
 class MemberCellModel: SACellModel {
     let name :String
     let imageUrl:String
+    let ienow:Int
     
-    init(name: String, imageUrl:String,  selectionHandler: SASelectionHandler) {
+    init(name: String, imageUrl:String, ienow:Int , selectionHandler: SASelectionHandler) {
         self.name = name
         self.imageUrl = imageUrl
-        let size = CGSize(width: 80, height: 80)
+        self.ienow = ienow
+        let size = CGSize(width: 70, height: 50)
         super.init(cellType: MemberCell.self, size: size, selectionHandler: selectionHandler)
     }
 }
@@ -33,8 +35,11 @@ class MemberCell: SACell, SACellType {
             return
         }
         
+        imageView.layer.cornerRadius = 25
+        imageView.clipsToBounds = true
+        
         if let imageUrl = NSURL(string:cellmodel.imageUrl) {
-            //imageView.af_setImageWithURL(imageUrl)
+            imageView.af_setImageWithURL(imageUrl)
         }
         
     }
