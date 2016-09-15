@@ -61,6 +61,7 @@
 			children = (
 				416867B91D89913400101D4A /* ViewController.swift */,
 				41BC9E7E1D8AD91800EA1F8B /* CookSelectViewController.swift */,
+				419A87CD1D8A2E2B00840928 /* GroupManager.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -90,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				413E01551D89B7700097D149 /* Router.swift */,
-				419A87CD1D8A2E2B00840928 /* GroupManager.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";

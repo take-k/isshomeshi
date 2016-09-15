@@ -12,20 +12,23 @@ import Sapporo
 class CookCellModel: SACellModel {
     let name :String
     let linkUrl:String
-    let good:Int
+    var good:Int
     
     init(name: String, linkUrl:String, good:Int , selectionHandler: SASelectionHandler) {
         self.name = name
         self.linkUrl = linkUrl
         self.good = good
         let size = CGSize(width: 100, height: 70)
-        super.init(cellType: MemberCell.self, size: size, selectionHandler: selectionHandler)
+        super.init(cellType: CookCell.self, size: size, selectionHandler: selectionHandler)
     }
 }
 
 class CookCell: SACell ,SACellType {
     typealias CellModel = CookCellModel
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var goodLabel: UILabel!
+    
     
     override func configure() {
         super.configure()
@@ -33,6 +36,9 @@ class CookCell: SACell ,SACellType {
         guard let cellmodel = cellmodel else {
             return
         }
+        imageView.image = UIImage(named: cellmodel.linkUrl)
+        nameLabel.text = cellmodel.name
+        goodLabel.text = "\(cellmodel.good)"
     }
     
     override func willDisplay(collectionView: UICollectionView) {
