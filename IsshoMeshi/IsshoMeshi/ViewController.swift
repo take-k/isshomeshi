@@ -52,7 +52,12 @@ class ViewController: UIViewController {
                         imageUrl: json["image_url"].string ?? "http://example.com",
                         ienow: json["ienow"].int ?? 0,
                         selectionHandler: { cell in
-                    })
+                            guard let model = (cell as? FriendCell)?.cellmodel else{
+                                return
+                            }
+                            GroupManager.sharedInstance.addMemberWithName(model.name, imageUrl: model.imageUrl, ienow: model.ienow)
+                        }
+                    )
                     friend.height = 120
 
                     return friend

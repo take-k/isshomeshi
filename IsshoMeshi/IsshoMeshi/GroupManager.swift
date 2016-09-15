@@ -23,11 +23,11 @@ class GroupManager {
         sapporo.registerCellByNib(MemberCell)
         sapporo.setLayout(layout)
         
-        let member = MemberCellModel(name: "タケダ", imageUrl: "") { (cell) in
+        let member = MemberCellModel(name: "タケダ", imageUrl: "",ienow: 0) { (cell) in
         }
         
         let section = SASection()
-        section.reset([member,member,member,member,member,member,member,member,member,member]).bump()
+        section.reset([member,member,member,member,member]).bump()
         sapporo.reset(section).bump()
         
         
@@ -43,7 +43,10 @@ class GroupManager {
         window.addSubview(collectionView)
     }
     
-    func addMember() {
+    func addMemberWithName(name:String, imageUrl:String, ienow:Int) {
+        let member = MemberCellModel(name: name, imageUrl: imageUrl,ienow: ienow, selectionHandler: { cell in })
+        sapporo.sections[0].append(member).bump()
+        //memberModels.append(member)
         
     }
 }

@@ -12,10 +12,12 @@ import Sapporo
 class MemberCellModel: SACellModel {
     let name :String
     let imageUrl:String
+    let ienow:Int
     
-    init(name: String, imageUrl:String,  selectionHandler: SASelectionHandler) {
+    init(name: String, imageUrl:String, ienow:Int , selectionHandler: SASelectionHandler) {
         self.name = name
         self.imageUrl = imageUrl
+        self.ienow = ienow
         let size = CGSize(width: 70, height: 50)
         super.init(cellType: MemberCell.self, size: size, selectionHandler: selectionHandler)
     }
