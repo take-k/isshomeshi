@@ -17,8 +17,8 @@ class GroupManager {
         let layout = SAFlowLayout()
         layout.scrollDirection = .Horizontal
         layout.itemSize = CGSizeMake(50, 50)
-
-        collectionView = UICollectionView(frame: CGRectMake(0, 65, 380, 80),collectionViewLayout:layout)
+        let width = UIApplication.sharedApplication().keyWindow?.frame.width ?? 100
+        collectionView = UICollectionView(frame: CGRectMake(0, 65, width, 80),collectionViewLayout:layout)
         collectionView.backgroundColor = UIColor.blackColor()
         sapporo.registerCellByNib(MemberCell)
         sapporo.setLayout(layout)
@@ -27,8 +27,9 @@ class GroupManager {
         }
         
         let section = SASection()
-        section.reset(member).bump()
+        section.reset([member,member,member,member,member,member,member,member,member,member]).bump()
         sapporo.reset(section).bump()
+        
         
     }
     
@@ -42,4 +43,7 @@ class GroupManager {
         window.addSubview(collectionView)
     }
     
+    func addMember() {
+        
+    }
 }

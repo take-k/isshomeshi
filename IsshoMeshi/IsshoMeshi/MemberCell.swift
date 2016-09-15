@@ -16,7 +16,7 @@ class MemberCellModel: SACellModel {
     init(name: String, imageUrl:String,  selectionHandler: SASelectionHandler) {
         self.name = name
         self.imageUrl = imageUrl
-        let size = CGSize(width: 80, height: 80)
+        let size = CGSize(width: 70, height: 50)
         super.init(cellType: MemberCell.self, size: size, selectionHandler: selectionHandler)
     }
 }
@@ -32,6 +32,9 @@ class MemberCell: SACell, SACellType {
         guard let cellmodel = cellmodel else {
             return
         }
+        
+        imageView.layer.cornerRadius = 25
+        imageView.clipsToBounds = true
         
         if let imageUrl = NSURL(string:cellmodel.imageUrl) {
             //imageView.af_setImageWithURL(imageUrl)
