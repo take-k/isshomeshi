@@ -34,6 +34,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ienow" width="141" height="127"/>
+        <image name="ienow" width="250" height="250"/>
     </resources>
 </document>

@@ -76,9 +76,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd">
-                                <rect key="frame" x="456" y="466" width="144" height="134"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd" customClass="SpringButton" customModule="IsshoMeshi" customModuleProvider="target">
+                                <rect key="frame" x="446" y="444" width="154" height="156"/>
                                 <state key="normal" image="ienow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ienowTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVW-vq-pPt"/>
                                 </connections>
@@ -192,6 +204,6 @@
     </scenes>
     <resources>
         <image name="badge" width="47" height="47"/>
-        <image name="ienow" width="141" height="127"/>
+        <image name="ienow" width="250" height="250"/>
     </resources>
 </document>
