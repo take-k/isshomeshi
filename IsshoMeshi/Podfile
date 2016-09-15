@@ -10,5 +10,6 @@ target 'IsshoMeshi' do
   pod 'RxCocoa',    '~> 2.0'
   pod 'Hakuba'
   pod 'Sapporo'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 end
 
