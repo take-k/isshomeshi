@@ -14,18 +14,26 @@ class GroupManager {
     private lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
     
     private init() {
-        let layout = UICollectionViewFlowLayout()
+        let layout = SAFlowLayout()
         layout.scrollDirection = .Horizontal
         layout.itemSize = CGSizeMake(50, 50)
-        collectionView = UICollectionView(frame: CGRectMake(0, 44, 350, 80) , collectionViewLayout:layout)
-        let friend = FriendCellModel(name: "タケダ", imageUrl: "", ienow: 4) { (cell) in
-            
+
+        collectionView = UICollectionView(frame: CGRectMake(0, 44, 350, 80))
+        sapporo.registerCellByNib(MemberCell)
+        sapporo.setLayout(layout)
+        
+        let member = MemberCellModel(name: "タケダ", imageUrl: "") { (cell) in
         }
+        
         let section = SASection()
+        section.reset(member).bump()
+        sapporo.reset(section).bump()
+        
     }
     
-    var memberModels:[FriendCellModel] = []
+    var memberModels:[MemberCellModel] = []
     let collectionView :UICollectionView
+
     
     
 }
