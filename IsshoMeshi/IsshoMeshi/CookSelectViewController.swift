@@ -12,8 +12,6 @@ import Sapporo
 class CookSelectViewController: UIViewController ,SapporoDelegate{
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var syncLabel: UILabel!
-    @IBOutlet weak var cookButton: UIButton!
     
     private lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
     override func viewDidLoad() {
@@ -65,6 +63,8 @@ class HeaderViewModel:SAFlowLayoutSupplementaryViewModel {
 class HeaderView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType {
     typealias ViewModel = HeaderViewModel
 
+    @IBOutlet weak var syncLabel: UILabel!
+    @IBOutlet weak var addCookButton: UIButton!
     override func configure() {
         super.configure()
         
