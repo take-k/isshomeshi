@@ -16,7 +16,8 @@ class MemberCellModel: SACellModel {
     init(name: String, imageUrl:String,  selectionHandler: SASelectionHandler) {
         self.name = name
         self.imageUrl = imageUrl
-        super.init(cellType: MemberCell.self, selectionHandler: selectionHandler)
+        let size = CGSize(width: 80, height: 80)
+        super.init(cellType: MemberCell.self, size: size, selectionHandler: selectionHandler)
     }
 }
 
@@ -33,7 +34,7 @@ class MemberCell: SACell, SACellType {
         }
         
         if let imageUrl = NSURL(string:cellmodel.imageUrl) {
-            imageView.af_setImageWithURL(imageUrl)
+            //imageView.af_setImageWithURL(imageUrl)
         }
         
     }

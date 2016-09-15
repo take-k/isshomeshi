@@ -54,9 +54,11 @@ class ViewController: UIViewController {
                         selectionHandler: { cell in
                     })
                     friend.height = 120
+
                     return friend
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
+                GroupManager.sharedInstance.addGroupView()
             case .Failure(let error):
                 break
             }
