@@ -97,16 +97,17 @@
                     <navigationItem key="navigationItem" id="vko-d5-KEc"/>
                     <connections>
                         <outlet property="tableView" destination="mD9-3L-CBa" id="kgk-jw-cqY"/>
+                        <segue destination="P8n-ow-Iq1" kind="show" identifier="showCookSelect" id="d8k-tK-ylz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-20" y="847"/>
         </scene>
-        <!--View Controller-->
+        <!--Cook Select View Controller-->
         <scene sceneID="f6J-qB-vjS">
             <objects>
-                <viewController id="P8n-ow-Iq1" sceneMemberID="viewController">
+                <viewController id="P8n-ow-Iq1" customClass="CookSelectViewController" customModule="IsshoMeshi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CIC-Jt-bUb"/>
                         <viewControllerLayoutGuide type="bottom" id="BBp-oB-J23"/>
@@ -119,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaR-SB-2m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="847"/>
+            <point key="canvasLocation" x="816" y="847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nmc-2v-prz">

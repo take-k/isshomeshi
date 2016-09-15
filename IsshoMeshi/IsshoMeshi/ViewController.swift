@@ -86,11 +86,8 @@ class ViewController: UIViewController {
         }
     }
     func nextTapped(sendor:UIButton){
-        guard let navigationController = navigationController else {
-            return
-        }
-        let vc = CookSelectViewController()
-        navigationController.pushViewController(vc, animated: true)
+        GroupManager.sharedInstance.hideNextButton()
+        performSegueWithIdentifier("showCookSelect", sender: sendor)
     }
 
 }

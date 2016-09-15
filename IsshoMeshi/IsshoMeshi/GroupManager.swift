@@ -75,4 +75,8 @@ class GroupManager {
             nextButton.hidden = false
         }
     }
+    
+    func hideNextButton(){
+        nextButton.hidden = true
+    }
 }
