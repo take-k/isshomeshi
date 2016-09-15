@@ -40,7 +40,7 @@ enum Router {
                 return (.GET, "/users/", params)
                 
             case .GROUPS_NEW(let params):
-                return (.POST, "/groups/json",params)
+                return (.POST, "/groups.json",params)
             default:
                 return (.GET, "/users/", nil)
             }

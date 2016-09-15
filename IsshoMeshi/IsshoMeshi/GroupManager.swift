@@ -11,12 +11,15 @@ import Sapporo
 
 class GroupManager {
     static let sharedInstance = GroupManager()
-    private lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
+    lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
     
     var memberModels:[MemberCellModel] = []
     let collectionView :UICollectionView
     let nextButton: UIButton
     let label: UILabel
+    
+    var myId:Int = 1
+    var myGroupId:Int?
     
     var viewController:ViewController? = nil
     

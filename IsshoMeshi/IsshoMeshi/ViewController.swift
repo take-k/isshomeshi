@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
     
     let friendModels:[FriendCellModel]? = nil
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
@@ -90,13 +90,28 @@ class ViewController: UIViewController {
     }
     
     func sendMembers() {
-    
+
     }
     
-    func nextTapped(sendor:UIButton){
-        GroupManager.sharedInstance.hideNextButton()
-        performSegueWithIdentifier("showCookSelect", sender: sendor)
-    }
+    func nextTapped(sender:UIButton){
+        let manager = GroupManager.sharedInstance
+        let models = manager.sapporo.sections[0].cellmodels
+        let params = ["name":manager.myId,"date":"2011-01-01","location":"どこか",
+                      "user_ids":models.map({ (model) -> Int in
+                        return (model as! MemberCellModel).id
+                      })]
+        Router.GROUPS_NEW(params as! [String : AnyObject]).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                manager.myGroupId = json["id"].int
+                manager.hideNextButton()
+                self.performSegueWithIdentifier("showCookSelect", sender: sender)
+            case .Failure(let error):
+                break
+            }
+        }    }
 
 }
 
