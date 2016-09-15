@@ -23,11 +23,12 @@ class GroupManager {
         layout.itemSize = CGSizeMake(50, 50)
         let width = UIApplication.sharedApplication().keyWindow?.frame.width ?? 100
 
-        collectionView = UICollectionView(frame: CGRectMake(0, 65, width, 80),collectionViewLayout:layout)
+        
+        collectionView = UICollectionView(frame: CGRectMake(0, 64, width, 80),collectionViewLayout:layout)
         collectionView.backgroundColor = UIColor.myLightGreen()
 
         nextButton = UIButton(type: .Custom)
-        nextButton.frame = CGRectMake(width - 90 , 65, 90, 80)
+        nextButton.frame = CGRectMake(width - 90 , 64, 90, 80)
         nextButton.backgroundColor = UIColor.myLightGreen()
         
         self.sapporo.registerCellByNib(MemberCell)
