@@ -24,11 +24,11 @@ class GroupManager {
         let width = UIApplication.sharedApplication().keyWindow?.frame.width ?? 100
 
         collectionView = UICollectionView(frame: CGRectMake(0, 65, width, 80),collectionViewLayout:layout)
-        collectionView.backgroundColor = UIColor.blackColor()
+        collectionView.backgroundColor = UIColor.myLightGreen()
 
         nextButton = UIButton(type: .Custom)
         nextButton.frame = CGRectMake(width - 90 , 65, 90, 80)
-        nextButton.backgroundColor = UIColor.blueColor()
+        nextButton.backgroundColor = UIColor.myLightGreen()
         
         self.sapporo.registerCellByNib(MemberCell)
         self.sapporo.setLayout(layout)
