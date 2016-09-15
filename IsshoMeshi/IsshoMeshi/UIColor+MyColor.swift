@@ -40,4 +40,7 @@ extension UIColor {
     class func myLightGreen() -> UIColor{
         return UIColor.hexStr("a6c47c", alpha: 1.0)
     }
+    class func myGray() -> UIColor{
+        return UIColor(red: 0.39, green: 0.43, blue: 0.35, alpha: 1.0)
+    }
 }
