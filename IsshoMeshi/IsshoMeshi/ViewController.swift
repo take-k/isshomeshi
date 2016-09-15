@@ -19,16 +19,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "一緒メシを誘おう！"
-        let friend = FriendCellModel(
-            name: "タケダ",
-            imageUrl: "http://example.com",
-            ienow:  0,
-            selectionHandler: { cell in
-        })
-        friend.height = 120
-        self.hakuba.reset(Section().reset(friend).bump())
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend"), style: .Done, target: self, action: #selector(addUserTapped(_:)))
+        self.hakuba.reset(Section().reset([]).bump())
         retrieveUsers()
+        GroupManager.sharedInstance.viewController = self
+        GroupManager.sharedInstance.addGroupView()
+    }
+    
+    func addUserTapped (sendor :UIButton){
+        
     }
     
     @IBAction func ienowTapped(sender: AnyObject) {
@@ -58,12 +58,11 @@ class ViewController: UIViewController {
                             GroupManager.sharedInstance.addMemberWithName(model.name, imageUrl: model.imageUrl, ienow: model.ienow)
                         }
                     )
-                    friend.height = 120
+                    friend.height = 60
 
                     return friend
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
-                GroupManager.sharedInstance.addGroupView()
             case .Failure(let error):
                 break
             }
@@ -85,5 +84,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    func nextTapped(sendor:UIButton){
+        GroupManager.sharedInstance.hideNextButton()
+        performSegueWithIdentifier("showCookSelect", sender: sendor)
+    }
+
 }
 
