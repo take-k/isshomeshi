@@ -12,6 +12,9 @@ import Sapporo
 class CookSelectViewController: UIViewController ,SapporoDelegate{
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var syncLabel: UILabel!
+    @IBOutlet weak var cookButton: UIButton!
+    
     private lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +44,13 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         
         section.reset(models)
         sapporo.reset(section).bump()
+    }
+    
+    
+    @IBAction func addCookTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func cookTapped(sender: AnyObject) {
     }
 }
 
