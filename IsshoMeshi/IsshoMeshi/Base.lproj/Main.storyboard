@@ -193,6 +193,6 @@
     </scenes>
     <resources>
         <image name="badge" width="47" height="47"/>
-        <image name="ienow" width="143" height="142"/>
+        <image name="ienow" width="250" height="250"/>
     </resources>
 </document>
