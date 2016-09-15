@@ -39,7 +39,7 @@ class MemberCell: SACell, SACellType {
         imageView.clipsToBounds = true
         
         if let imageUrl = NSURL(string:cellmodel.imageUrl) {
-            //imageView.af_setImageWithURL(imageUrl)
+            imageView.af_setImageWithURL(imageUrl)
         }
         
     }
