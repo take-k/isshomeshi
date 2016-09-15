@@ -61,10 +61,20 @@ class GroupManager {
 
     }
     
-    func addMemberWithName(name:String, imageUrl:String, ienow:Int) {
-        let member = MemberCellModel(name: name, imageUrl: imageUrl,ienow: ienow, selectionHandler: { cell in })
+    func addMemberWithName(name:String,id :Int, imageUrl:String, ienow:Int) {
+        guard let section = sapporo.sections.first else {
+            return
+        }
+        let index = section.cellmodels.indexOf { (model) -> Bool in
+            guard let model = model as? MemberCellModel else {
+                return false
+            }
+            return model.id == id
+        }
+        if index != nil {return}
         
-        let section = sapporo.sections[0]
+        let member = MemberCellModel(name: name,id:id, imageUrl: imageUrl,ienow: ienow, selectionHandler: { cell in })
+        
         section.append(member).bump()
         
         if section.itemsCount > 0 {

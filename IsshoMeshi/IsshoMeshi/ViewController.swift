@@ -53,10 +53,13 @@ class ViewController: UIViewController {
                         imageUrl: json["image_url"].string ?? "http://example.com",
                         ienow: json["ienow"].int ?? 0,
                         selectionHandler: { cell in
+                            if let indexPath = self.tableView.indexPathForCell(cell) {
+                                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                            }
                             guard let model = (cell as? FriendCell)?.cellmodel else{
                                 return
                             }
-                            GroupManager.sharedInstance.addMemberWithName(model.name, imageUrl: model.imageUrl, ienow: model.ienow)
+                            GroupManager.sharedInstance.addMemberWithName(model.name,id:model.id, imageUrl: model.imageUrl, ienow: model.ienow)
                         }
                     )
                     friend.height = 60
