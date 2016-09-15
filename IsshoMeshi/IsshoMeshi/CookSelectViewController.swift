@@ -34,7 +34,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
         
         let section = SASection()
-        section.inset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        section.inset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
         section.minimumLineSpacing = 40
         section.headerViewModel = HeaderViewModel()
         section.footerViewModel = FooterViewModel()
@@ -66,7 +66,7 @@ class HeaderView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType
 
 class FooterViewModel:SAFlowLayoutSupplementaryViewModel {
     init (){
-        super.init(viewType: FooterView.self,size:CGSize(width: width, height: 160 ))
+        super.init(viewType: FooterView.self,size:CGSize(width: width, height: 90 ))
     }
 }
 
