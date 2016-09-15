@@ -19,6 +19,7 @@
 		419A87D01D8A373100840928 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A87CF1D8A373100840928 /* MemberCell.swift */; };
 		41BC9E791D8A84B800EA1F8B /* UIColor+MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E781D8A84B800EA1F8B /* UIColor+MyColor.swift */; };
 		41BC9E7B1D8AADFC00EA1F8B /* CookSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E7A1D8AADFC00EA1F8B /* CookSelectViewController.swift */; };
+		41BC9E7D1D8ABAF100EA1F8B /* CookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E7C1D8ABAF100EA1F8B /* CookCell.swift */; };
 		41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE40AD1D89A4AA00A33495 /* FriendCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		419A87CF1D8A373100840928 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		41BC9E781D8A84B800EA1F8B /* UIColor+MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColor.swift"; sourceTree = "<group>"; };
 		41BC9E7A1D8AADFC00EA1F8B /* CookSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookSelectViewController.swift; sourceTree = "<group>"; };
+		41BC9E7C1D8ABAF100EA1F8B /* CookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookCell.swift; sourceTree = "<group>"; };
 		41BE40AD1D89A4AA00A33495 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		C1B4151E65E4B74398FCF574 /* Pods-IsshoMeshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A323917852F16A09473102 /* Pods-IsshoMeshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				41BE40AD1D89A4AA00A33495 /* FriendCell.swift */,
+				41BC9E7C1D8ABAF100EA1F8B /* CookCell.swift */,
 				419A87CF1D8A373100840928 /* MemberCell.swift */,
 			);
 			name = views;
@@ -275,6 +278,7 @@
 				413E01561D89B7700097D149 /* Router.swift in Sources */,
 				419A87D01D8A373100840928 /* MemberCell.swift in Sources */,
 				41BC9E791D8A84B800EA1F8B /* UIColor+MyColor.swift in Sources */,
+				41BC9E7D1D8ABAF100EA1F8B /* CookCell.swift in Sources */,
 				416867BA1D89913400101D4A /* ViewController.swift in Sources */,
 				41BC9E7B1D8AADFC00EA1F8B /* CookSelectViewController.swift in Sources */,
 				416867B81D89913400101D4A /* AppDelegate.swift in Sources */,
