@@ -48,6 +48,7 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 let friendModels = json.map({ (key,json) -> FriendCellModel in
                     let friend = FriendCellModel(
+                        id : json["id"].int ?? 0,
                         name: json["name"].string ?? "タケダ",
                         imageUrl: json["image_url"].string ?? "http://example.com",
                         ienow: json["ienow"].int ?? 0,

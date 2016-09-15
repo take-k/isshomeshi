@@ -11,11 +11,13 @@ import Hakuba
 import AlamofireImage
 
 class FriendCellModel: CellModel {
+    let id:Int
     let name :String
     let imageUrl:String
     var ienow:Int
 
-    init(name: String,imageUrl:String,ienow:Int, selectionHandler: SelectionHandler) {
+    init(id:Int, name: String,imageUrl:String,ienow:Int, selectionHandler: SelectionHandler) {
+        self.id = id
         self.name = name
         self.imageUrl = imageUrl
         self.ienow = ienow
