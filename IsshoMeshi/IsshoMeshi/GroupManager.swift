@@ -18,7 +18,7 @@ class GroupManager {
         layout.scrollDirection = .Horizontal
         layout.itemSize = CGSizeMake(50, 50)
 
-        collectionView = UICollectionView(frame: CGRectMake(0, 44, 350, 80),collectionViewLayout:layout)
+        collectionView = UICollectionView(frame: CGRectMake(0, 65, 380, 80),collectionViewLayout:layout)
         collectionView.backgroundColor = UIColor.blackColor()
         sapporo.registerCellByNib(MemberCell)
         sapporo.setLayout(layout)
