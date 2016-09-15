@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.hakuba.reset(Section().reset([]).bump())
         retrieveUsers()
+        GroupManager.sharedInstance.viewController = self
+        GroupManager.sharedInstance.addGroupView()
     }
     
     func addUserTapped (sendor :UIButton){
@@ -62,7 +64,6 @@ class ViewController: UIViewController {
                     return friend
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
-                GroupManager.sharedInstance.addGroupView()
             case .Failure(let error):
                 break
             }
@@ -84,5 +85,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    func nextTapped(sendor:UIButton){
+        guard let navigationController = navigationController else {
+            return
+        }
+        let vc = CookSelectViewController()
+        navigationController.pushViewController(vc, animated: true)
+    }
+
 }
 

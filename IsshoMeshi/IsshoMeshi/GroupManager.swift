@@ -18,7 +18,7 @@ class GroupManager {
     let nextButton: UIButton
     let label: UILabel
     
-    let viewController:ViewController? = nil
+    var viewController:ViewController? = nil
     
     private init() {
         let layout = SAFlowLayout()
@@ -60,6 +60,8 @@ class GroupManager {
         window.addSubview(collectionView)
         window.addSubview(nextButton)
         window.addSubview(label)
+        nextButton.addTarget(viewController, action: #selector(ViewController.nextTapped(_:)), forControlEvents: .TouchUpInside)
+
     }
     
     func addMemberWithName(name:String, imageUrl:String, ienow:Int) {
@@ -73,13 +75,4 @@ class GroupManager {
             nextButton.hidden = false
         }
     }
-    
-    func nextTapped(sendor:UIButton){
-        guard let navController = viewController?.navigationController else {
-            return
-        }
-        
-        //navController.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
-    }
-
 }
