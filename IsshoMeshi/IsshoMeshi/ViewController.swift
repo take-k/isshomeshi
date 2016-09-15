@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "一緒メシを誘おう！"
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         let friend = FriendCellModel(
             name: "タケダ",
             imageUrl: "http://example.com",
