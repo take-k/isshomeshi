@@ -10,11 +10,13 @@ import UIKit
 import Sapporo
 
 class CookCellModel: SACellModel {
+    let id:Int
     let name :String
     let linkUrl:String
     var good:Int
     
-    init(name: String, linkUrl:String, good:Int , selectionHandler: SASelectionHandler) {
+    init(name: String, id:Int, linkUrl:String, good:Int , selectionHandler: SASelectionHandler) {
+        self.id = id
         self.name = name
         self.linkUrl = linkUrl
         self.good = good

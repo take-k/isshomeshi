@@ -23,27 +23,18 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         layout.itemSize = CGSizeMake( 100, 70)
         sapporo.setLayout(layout)
         
-        
-        let models = (1...9).map { num in
-            return CookCellModel(name: "餃子", linkUrl: "cell\(num % 4)", good: 1) { (cell) in
-                guard let cook = (cell as? CookCell)?.cellmodel else {
-                    return
-                }
-                cook.good += 1
-                cook.bump()
-            }
-        }
-        
         let section = SASection()
         section.inset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
         section.minimumLineSpacing = 40
         section.headerViewModel = HeaderViewModel()
         section.footerViewModel = FooterViewModel()
-        
-        section.reset(models)
         sapporo.reset(section).bump()
+        retrieveCooks()
     }
     
+    func retrieveCooks(){
+        
+    }
     
     @IBAction func addCookTapped(sender: AnyObject) {
     }
