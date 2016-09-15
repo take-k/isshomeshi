@@ -20,14 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
-        let friend = FriendCellModel(
-            name: "タケダ",
-            imageUrl: "http://example.com",
-            ienow:  0,
-            selectionHandler: { cell in
-        })
-        friend.height = 60
-        self.hakuba.reset(Section().reset(friend).bump())
+        self.hakuba.reset(Section().reset([]).bump())
         retrieveUsers()
     }
     
