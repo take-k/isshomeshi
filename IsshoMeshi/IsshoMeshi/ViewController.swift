@@ -88,6 +88,11 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func sendMembers() {
+    
+    }
+    
     func nextTapped(sendor:UIButton){
         GroupManager.sharedInstance.hideNextButton()
         performSegueWithIdentifier("showCookSelect", sender: sendor)
