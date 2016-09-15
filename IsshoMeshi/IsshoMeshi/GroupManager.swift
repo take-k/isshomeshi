@@ -44,9 +44,6 @@ class GroupManager {
         sapporo.registerCellByNib(MemberCell)
         sapporo.setLayout(layout)
         
-        let member = MemberCellModel(name: "タケダ", imageUrl: "",ienow: 0) { (cell) in
-        }
-        
         let section = SASection()
         section.reset([]).bump()
         sapporo.reset(section).bump()
