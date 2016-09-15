@@ -8,6 +8,7 @@
 
 import UIKit
 import Sapporo
+import SwiftyJSON
 
 class CookSelectViewController: UIViewController ,SapporoDelegate{
 
@@ -29,11 +30,43 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         section.headerViewModel = HeaderViewModel()
         section.footerViewModel = FooterViewModel()
         sapporo.reset(section).bump()
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         retrieveCooks()
     }
     
     func retrieveCooks(){
-        
+        guard let groupId = GroupManager.sharedInstance.myGroupId else {
+            return
+        }
+
+        Router.COOKS(groupId).request.responseJSON { (response) in
+            debugPrint(response)
+            switch (response.result) {
+            case .Success(let value):
+                let json = JSON(value)
+                let models = json.map({ (key,json) -> CookCellModel in
+                    let id = json["id"].int ?? 0
+                    return CookCellModel(name: json["name"].string ?? "鍋",
+                        id: json["id"].int ?? 0,
+                        linkUrl: "cell\(id % 4)",
+                        good: json["good"].int ?? 0,
+                        selectionHandler: { (cell) in
+                            guard let model = (cell as? CookCell)?.cellmodel else {
+                                return
+                            }
+                            model.good += 1
+                            model.bump()
+                    })
+                })
+                self.sapporo.sections[0].reset(models).bump()
+            case .Failure(let error):
+                break
+            }
+        }
     }
     
     @IBAction func addCookTapped(sender: AnyObject) {
