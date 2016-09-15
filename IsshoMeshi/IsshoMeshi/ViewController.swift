@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend"), style: .Done, target: self, action: #selector(addUserTapped(_:)))
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.hakuba.reset(Section().reset([]).bump())
         retrieveUsers()
         GroupManager.sharedInstance.viewController = self

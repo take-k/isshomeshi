@@ -94,7 +94,9 @@
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="v94-E3-7hR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vko-d5-KEc"/>
+                    <navigationItem key="navigationItem" id="vko-d5-KEc">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="Skg-c6-r3O"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mD9-3L-CBa" id="kgk-jw-cqY"/>
                         <segue destination="P8n-ow-Iq1" kind="show" identifier="showCookSelect" id="d8k-tK-ylz"/>
@@ -116,6 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaR-SB-2m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,6 +132,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hS3-mu-FW1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.70196078431372544" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99980520780000004" green="0.97929884609999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
