@@ -21,6 +21,8 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         layout.scrollDirection = .Vertical
         layout.itemSize = CGSizeMake( 100, 70)
         sapporo.setLayout(layout)
+        
+        
         let models = (1...9).map { num in
             return CookCellModel(name: "餃子", linkUrl: "cell\(num % 4)", good: 1) { (cell) in
                 guard let cook = (cell as? CookCell)?.cellmodel else {
@@ -34,9 +36,26 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         let section = SASection()
         section.inset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         section.minimumLineSpacing = 40
-        
+        section.headerViewModel = HeaderViewModel()
         section.reset(models)
         sapporo.reset(section).bump()
     }
-    
+}
+
+class HeaderViewModel:SAFlowLayoutSupplementaryViewModel {
+    init (){
+        super.init(viewType: HeaderView.self,size:CGSize(width: 380, height: 160 ))
+    }
+}
+
+class HeaderView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType {
+    typealias ViewModel = HeaderViewModel
+
+    override func configure() {
+        super.configure()
+        
+        guard let viewmodel = viewmodel else {
+            return
+        }
+    }
 }
