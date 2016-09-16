@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Hakuba
-  - Kingfisher
+  - Kingfisher (~> 2.4)
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0)
   - Sapporo
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 021a999c512936cd1600e34f2465d38441eea255
+PODFILE CHECKSUM: a23f96d0a94e6443dbfafbcca7a193bc36212731
 
 COCOAPODS: 1.0.1

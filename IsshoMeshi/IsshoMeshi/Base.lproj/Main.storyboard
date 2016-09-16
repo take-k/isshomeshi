@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
-                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                                <rect key="frame" x="0.0" y="214" width="600" height="386"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.8980392157" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
@@ -39,7 +39,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8Y-tK-mGO">
-                                                    <rect key="frame" x="433" y="7" width="47" height="47"/>
+                                                    <rect key="frame" x="533" y="7" width="47" height="47"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="KSW-vX-KXJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
@@ -68,7 +68,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="A8Y-tK-mGO" firstAttribute="centerY" secondItem="lEa-zy-1Il" secondAttribute="centerY" id="dyf-ax-f48"/>
-                                                <constraint firstAttribute="trailing" secondItem="A8Y-tK-mGO" secondAttribute="trailing" constant="120" id="kHh-my-fte"/>
+                                                <constraint firstAttribute="trailing" secondItem="A8Y-tK-mGO" secondAttribute="trailing" constant="20" id="kHh-my-fte"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd" customClass="SpringButton" customModule="IsshoMeshi" customModuleProvider="target">
-                                <rect key="frame" x="500" y="500" width="100" height="100"/>
+                                <rect key="frame" x="250" y="154" width="100" height="100"/>
                                 <state key="normal" image="ienow"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
@@ -107,12 +107,20 @@
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mD9-3L-CBa" secondAttribute="bottom" id="33N-Zc-rix"/>
+                            <constraint firstItem="07r-7j-zHd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6lj-Zm-cks"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" id="OdI-PE-7Tq"/>
                             <constraint firstAttribute="trailing" secondItem="mD9-3L-CBa" secondAttribute="trailing" id="Z3B-hJ-wW8"/>
                             <constraint firstAttribute="trailing" secondItem="07r-7j-zHd" secondAttribute="trailing" id="hW3-9q-z77"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ieT-01-wZJ"/>
-                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="v94-E3-7hR"/>
+                            <constraint firstItem="07r-7j-zHd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="oqb-dw-bc8"/>
+                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="v94-E3-7hR"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hW3-9q-z77"/>
+                                <exclude reference="OdI-PE-7Tq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vko-d5-KEc">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="Skg-c6-r3O"/>
