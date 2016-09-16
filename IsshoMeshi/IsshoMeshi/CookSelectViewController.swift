@@ -71,8 +71,21 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
     }
     func updateButton() {
-        //cookButton.titleLabel?.text = cmodel.name + "を作る"
-        
+        let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
+            guard let cella = cella as? CookCellModel ,cellb = cellb as? CookCellModel else {
+                return false
+            }
+            return cella.good < cellb.good
+        }
+        guard let cmodel = model as? CookCellModel else {
+            return
+        }
+        guard let footer = sapporo.sections[0].footerViewModel as? FooterViewModel else {
+            return
+        }
+        footer.name = cmodel.name
+        sapporo.sections[0].footerViewModel = footer
+        sapporo.sections[0].bump()
     }
     
     @IBAction func addCookTapped(sender: AnyObject) {
@@ -127,6 +140,7 @@ class HeaderView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType
 }
 
 class FooterViewModel:SAFlowLayoutSupplementaryViewModel {
+    var name:String = "〜〜"
     init (){
         super.init(viewType: FooterView.self,size:CGSize(width: width, height: 90 ))
     }
@@ -142,5 +156,6 @@ class FooterView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType
         guard let viewmodel = viewmodel else {
             return
         }
+        cookButton.titleLabel?.text = viewmodel.name + "を作る"
     }
 }

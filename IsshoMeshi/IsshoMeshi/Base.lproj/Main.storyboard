@@ -253,8 +253,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-9d-qis">
                                             <rect key="frame" x="150" y="20" width="300" height="50"/>
                                             <color key="backgroundColor" red="0.70196078431372544" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
-                                            <state key="normal" title="これを作る"/>
+                                            <state key="normal" title="一緒メシを選ぼう！"/>
                                             <connections>
                                                 <action selector="cookTapped:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="Sn4-v3-wTO"/>
                                             </connections>
