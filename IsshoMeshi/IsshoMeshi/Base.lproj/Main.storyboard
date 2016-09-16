@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
-                                <rect key="frame" x="0.0" y="214" width="600" height="386"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
+                                <rect key="frame" x="0.0" y="334" width="600" height="266"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.8980392157" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
@@ -83,7 +83,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd" customClass="SpringButton" customModule="IsshoMeshi" customModuleProvider="target">
-                                <rect key="frame" x="250" y="154" width="100" height="100"/>
+                                <rect key="frame" x="225" y="154" width="150" height="150"/>
                                 <state key="normal" image="ienow"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
@@ -97,7 +97,7 @@
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="linear"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOut"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ienowTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVW-vq-pPt"/>
@@ -110,6 +110,7 @@
                             <constraint firstItem="07r-7j-zHd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6lj-Zm-cks"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" id="OdI-PE-7Tq"/>
                             <constraint firstAttribute="trailing" secondItem="mD9-3L-CBa" secondAttribute="trailing" id="Z3B-hJ-wW8"/>
+                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" constant="20" id="fAx-s4-pWJ"/>
                             <constraint firstAttribute="trailing" secondItem="07r-7j-zHd" secondAttribute="trailing" id="hW3-9q-z77"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ieT-01-wZJ"/>
                             <constraint firstItem="07r-7j-zHd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="oqb-dw-bc8"/>
@@ -118,6 +119,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="hW3-9q-z77"/>
+                                <exclude reference="v94-E3-7hR"/>
                                 <exclude reference="OdI-PE-7Tq"/>
                             </mask>
                         </variation>
@@ -311,7 +313,7 @@
     <resources>
         <image name="badge" width="47" height="47"/>
         <image name="cell0" width="100" height="72"/>
-        <image name="ienow" width="100" height="100"/>
+        <image name="ienow" width="150" height="150"/>
         <image name="menuadd" width="33" height="34"/>
         <image name="menulogo" width="347" height="104"/>
     </resources>
