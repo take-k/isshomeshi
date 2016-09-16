@@ -14,9 +14,10 @@
 		416867BF1D89913400101D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416867BE1D89913400101D4A /* Assets.xcassets */; };
 		416867C21D89913400101D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416867C01D89913400101D4A /* LaunchScreen.storyboard */; };
 		4182F8531D8A389C001B3D12 /* MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4182F8521D8A389C001B3D12 /* MemberCell.xib */; };
+		418F0F6A1D8B862D004B9F5F /* UIAlertController+Issho.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418F0F691D8B862D004B9F5F /* UIAlertController+Issho.swift */; };
 		419A87CE1D8A2E2B00840928 /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A87CD1D8A2E2B00840928 /* GroupManager.swift */; };
 		419A87D01D8A373100840928 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419A87CF1D8A373100840928 /* MemberCell.swift */; };
-		41AF3C191D8B22AD005F3646 /* CookSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF3C181D8B22AD005F3646 /* CookSelectViewController.swift */; };
+		41AF3C191D8B22AD005F3646 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		41BC9E791D8A84B800EA1F8B /* UIColor+MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E781D8A84B800EA1F8B /* UIColor+MyColor.swift */; };
 		41BC9E7F1D8AD91800EA1F8B /* CookSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E7E1D8AD91800EA1F8B /* CookSelectViewController.swift */; };
 		41BC9E811D8AD92900EA1F8B /* CookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E801D8AD92900EA1F8B /* CookCell.swift */; };
@@ -35,6 +36,7 @@
 		416867C11D89913400101D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		416867C31D89913400101D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4182F8521D8A389C001B3D12 /* MemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCell.xib; sourceTree = "<group>"; };
+		418F0F691D8B862D004B9F5F /* UIAlertController+Issho.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Issho.swift"; sourceTree = "<group>"; };
 		419A87CD1D8A2E2B00840928 /* GroupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupManager.swift; sourceTree = "<group>"; };
 		419A87CF1D8A373100840928 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		41BC9E781D8A84B800EA1F8B /* UIColor+MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MyColor.swift"; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 			children = (
 				416867B71D89913400101D4A /* AppDelegate.swift */,
 				416867C01D89913400101D4A /* LaunchScreen.storyboard */,
-				224BF7161D8AF12E006AF418 /* Spring */,
 				416867C31D89913400101D4A /* Info.plist */,
 				416867BE1D89913400101D4A /* Assets.xcassets */,
 			);
@@ -133,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				41BC9E781D8A84B800EA1F8B /* UIColor+MyColor.swift */,
+				418F0F691D8B862D004B9F5F /* UIAlertController+Issho.swift */,
 			);
 			name = extention;
 			sourceTree = "<group>";
@@ -218,8 +220,6 @@
 				416867C21D89913400101D4A /* LaunchScreen.storyboard in Resources */,
 				416867BF1D89913400101D4A /* Assets.xcassets in Resources */,
 				416867BD1D89913400101D4A /* Main.storyboard in Resources */,
-				224BF7441D8AF12E006AF418 /* LoadingView.xib in Resources */,
-				224BF7411D8AF12E006AF418 /* Info.plist in Resources */,
 				4182F8531D8A389C001B3D12 /* MemberCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,43 +279,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224BF73A1D8AF12E006AF418 /* DesignableImageView.swift in Sources */,
-				224BF73C1D8AF12E006AF418 /* DesignableTabBarController.swift in Sources */,
-				224BF7471D8AF12E006AF418 /* Spring.swift in Sources */,
-				224BF7501D8AF12E006AF418 /* TransitionZoom.swift in Sources */,
 				413E01561D89B7700097D149 /* Router.swift in Sources */,
-				224BF73E1D8AF12E006AF418 /* DesignableTextView.swift in Sources */,
 				419A87D01D8A373100840928 /* MemberCell.swift in Sources */,
-				224BF7451D8AF12E006AF418 /* Misc.swift in Sources */,
-				41AF3C191D8B22AD005F3646 /* CookSelectViewController.swift in Sources */,
-				224BF7431D8AF12E006AF418 /* LoadingView.swift in Sources */,
+				41AF3C191D8B22AD005F3646 /* (null) in Sources */,
 				41BC9E791D8A84B800EA1F8B /* UIColor+MyColor.swift in Sources */,
 				41BC9E811D8AD92900EA1F8B /* CookCell.swift in Sources */,
 				416867BA1D89913400101D4A /* ViewController.swift in Sources */,
-				224BF74E1D8AF12E006AF418 /* SpringView.swift in Sources */,
-				224BF7381D8AF12E006AF418 /* BlurView.swift in Sources */,
-				224BF73F1D8AF12E006AF418 /* DesignableView.swift in Sources */,
-				224BF74D1D8AF12E006AF418 /* SpringTextView.swift in Sources */,
-				224BF74C1D8AF12E006AF418 /* SpringTextField.swift in Sources */,
-				224BF7461D8AF12E006AF418 /* SoundPlayer.swift in Sources */,
-				224BF7401D8AF12E006AF418 /* ImageLoader.swift in Sources */,
-				224BF7371D8AF12E006AF418 /* AutoTextView.swift in Sources */,
 				41BC9E7F1D8AD91800EA1F8B /* CookSelectViewController.swift in Sources */,
 				416867B81D89913400101D4A /* AppDelegate.swift in Sources */,
-				224BF7511D8AF12E006AF418 /* UnwindSegue.swift in Sources */,
-				224BF7361D8AF12E006AF418 /* AsyncImageView.swift in Sources */,
-				224BF7481D8AF12E006AF418 /* SpringAnimation.swift in Sources */,
-				224BF7421D8AF12E006AF418 /* KeyboardLayoutConstraint.swift in Sources */,
 				41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */,
-				224BF73D1D8AF12E006AF418 /* DesignableTextField.swift in Sources */,
-				224BF74F1D8AF12E006AF418 /* TransitionManager.swift in Sources */,
-				224BF7351D8AF12E006AF418 /* AsyncButton.swift in Sources */,
+				418F0F6A1D8B862D004B9F5F /* UIAlertController+Issho.swift in Sources */,
 				419A87CE1D8A2E2B00840928 /* GroupManager.swift in Sources */,
-				224BF74B1D8AF12E006AF418 /* SpringLabel.swift in Sources */,
-				224BF74A1D8AF12E006AF418 /* SpringImageView.swift in Sources */,
-				224BF73B1D8AF12E006AF418 /* DesignableLabel.swift in Sources */,
-				224BF7491D8AF12E006AF418 /* SpringButton.swift in Sources */,
-				224BF7391D8AF12E006AF418 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
