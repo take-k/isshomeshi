@@ -60,6 +60,8 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                             }
                             model.good += 1
                             model.bump()
+                            
+                            self.updateButton()
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
@@ -68,11 +70,25 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
             }
         }
     }
+    func updateButton() {
+        let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
+            guard let cella = cella as? CookCellModel ,cellb = cellb as? CookCellModel else {
+                return false
+            }
+            return cella.good > cellb.good
+        }
+        guard let cmodel = model as? CookCellModel else {
+            return
+        }
+        //cookButton.titleLabel?.text = cmodel.name + "を作る"
+        
+    }
     
     @IBAction func addCookTapped(sender: AnyObject) {
     }
     
     @IBAction func cookTapped(sender: AnyObject) {
+        
     }
 }
 
@@ -107,6 +123,7 @@ class FooterViewModel:SAFlowLayoutSupplementaryViewModel {
 class FooterView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType {
     typealias ViewModel = FooterViewModel
     
+    @IBOutlet weak var cookButton: UIButton!
     override func configure() {
         super.configure()
         
