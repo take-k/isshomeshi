@@ -28,7 +28,19 @@ class ViewController: UIViewController {
     }
     
     func addUserTapped (sendor :UIButton){
-        
+        let alert = UIAlertController(title: "友だち追加", message: "友だちの名前を入力してね", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler { (textfield) in
+            textfield.placeholder = "ユーザー名"
+        }
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+            let field = alert.textFields![0] as UITextField
+            self.createUser(field.text!)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func createUser (name:String){
     }
     
     @IBAction func ienowTapped(sender: AnyObject) {
