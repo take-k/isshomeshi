@@ -8,6 +8,7 @@
 
 import UIKit
 import Sapporo
+import Kingfisher
 
 class MemberCellModel: SACellModel {
     let id:Int
@@ -41,7 +42,7 @@ class MemberCell: SACell, SACellType {
         imageView.clipsToBounds = true
         
         if let imageUrl = NSURL(string:cellmodel.imageUrl) {
-            imageView.af_setImageWithURL(imageUrl)
+            imageView.kf_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "men"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
         }
         
     }

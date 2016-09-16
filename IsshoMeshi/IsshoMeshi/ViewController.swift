@@ -32,8 +32,6 @@ class ViewController: UIViewController {
     func checkLogin (){
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        defaults.setInteger(0 , forKey: self.myIdKey)
-        
         let myId = defaults.integerForKey(myIdKey)
         let manager = GroupManager.sharedInstance
         if  myId == 0 || manager.myId == 0{
@@ -66,8 +64,10 @@ class ViewController: UIViewController {
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 if defaults.integerForKey(self.myIdKey) == 0 {
-                    defaults.setInteger(json["id"].int ?? 0 , forKey: self.myIdKey)
+                    let id = json["id"].int ?? 0
+                    defaults.setInteger(id , forKey: self.myIdKey)
                     defaults.synchronize()
+                    GroupManager.sharedInstance.myId = id
                 }
                 
                 self.retrieveUsers()

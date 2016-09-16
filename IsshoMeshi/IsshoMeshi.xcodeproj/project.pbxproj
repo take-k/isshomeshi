@@ -22,11 +22,10 @@
 		41BC9E7F1D8AD91800EA1F8B /* CookSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E7E1D8AD91800EA1F8B /* CookSelectViewController.swift */; };
 		41BC9E811D8AD92900EA1F8B /* CookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC9E801D8AD92900EA1F8B /* CookCell.swift */; };
 		41BE40AE1D89A4AA00A33495 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE40AD1D89A4AA00A33495 /* FriendCell.swift */; };
-		F2B0E66F80CB7DAEC755F18D /* Pods_IsshoMeshi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E300C211C2887EEF38EF05F /* Pods_IsshoMeshi.framework */; };
+		BCCB0E6D1F90748EE15F47E4 /* Pods_IsshoMeshi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9319561F68514F9642B0E7A /* Pods_IsshoMeshi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		083C4FBB88C3BB0547917AA7 /* Pods-IsshoMeshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.debug.xcconfig"; sourceTree = "<group>"; };
 		413E01551D89B7700097D149 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		416867B41D89913400101D4A /* IsshoMeshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsshoMeshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416867B71D89913400101D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +42,9 @@
 		41BC9E7E1D8AD91800EA1F8B /* CookSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookSelectViewController.swift; sourceTree = "<group>"; };
 		41BC9E801D8AD92900EA1F8B /* CookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookCell.swift; sourceTree = "<group>"; };
 		41BE40AD1D89A4AA00A33495 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
-		9E300C211C2887EEF38EF05F /* Pods_IsshoMeshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsshoMeshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA6665C5E6CD3C4CDA5AD7C6 /* Pods-IsshoMeshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.release.xcconfig"; sourceTree = "<group>"; };
+		7423530DE51A0163469C8D5C /* Pods-IsshoMeshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.release.xcconfig"; sourceTree = "<group>"; };
+		E8607BFB9A0D3751794EACB6 /* Pods-IsshoMeshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsshoMeshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsshoMeshi/Pods-IsshoMeshi.debug.xcconfig"; sourceTree = "<group>"; };
+		F9319561F68514F9642B0E7A /* Pods_IsshoMeshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsshoMeshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B0E66F80CB7DAEC755F18D /* Pods_IsshoMeshi.framework in Frameworks */,
+				BCCB0E6D1F90748EE15F47E4 /* Pods_IsshoMeshi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +103,8 @@
 			children = (
 				416867B61D89913400101D4A /* IsshoMeshi */,
 				416867B51D89913400101D4A /* Products */,
-				D0FD3FFA7F38A69F0AE177C0 /* Pods */,
-				F0516763BA2168E78D4A3494 /* Frameworks */,
+				EC65A71E2ED1671A619E981F /* Pods */,
+				F350803CAE9E5AC22B9BBDD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,19 +139,19 @@
 			name = extention;
 			sourceTree = "<group>";
 		};
-		D0FD3FFA7F38A69F0AE177C0 /* Pods */ = {
+		EC65A71E2ED1671A619E981F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				083C4FBB88C3BB0547917AA7 /* Pods-IsshoMeshi.debug.xcconfig */,
-				CA6665C5E6CD3C4CDA5AD7C6 /* Pods-IsshoMeshi.release.xcconfig */,
+				E8607BFB9A0D3751794EACB6 /* Pods-IsshoMeshi.debug.xcconfig */,
+				7423530DE51A0163469C8D5C /* Pods-IsshoMeshi.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F0516763BA2168E78D4A3494 /* Frameworks */ = {
+		F350803CAE9E5AC22B9BBDD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9E300C211C2887EEF38EF05F /* Pods_IsshoMeshi.framework */,
+				F9319561F68514F9642B0E7A /* Pods_IsshoMeshi.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 		};
 		416867C71D89913400101D4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 083C4FBB88C3BB0547917AA7 /* Pods-IsshoMeshi.debug.xcconfig */;
+			baseConfigurationReference = E8607BFB9A0D3751794EACB6 /* Pods-IsshoMeshi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IsshoMeshi/Info.plist;
@@ -412,7 +412,7 @@
 		};
 		416867C81D89913400101D4A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA6665C5E6CD3C4CDA5AD7C6 /* Pods-IsshoMeshi.release.xcconfig */;
+			baseConfigurationReference = 7423530DE51A0163469C8D5C /* Pods-IsshoMeshi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IsshoMeshi/Info.plist;
