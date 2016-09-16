@@ -61,6 +61,16 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                             model.good += 1
                             model.bump()
                             
+                            Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
+                                debugPrint(response)
+                                switch (response.result) {
+                                case .Success(let value):
+                                    let json = JSON(value)
+                                case .Failure(let error):
+                                    break
+                                }
+                            })
+                            
                             self.updateButton()
                     })
                 })
@@ -70,6 +80,8 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
             }
         }
     }
+    
+    
     func updateButton() {
         let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
             guard let cella = cella as? CookCellModel ,cellb = cellb as? CookCellModel else {
@@ -88,9 +100,31 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         sapporo.sections[0].bump()
     }
     
-    @IBAction func addCookTapped(sender: AnyObject) {
-    
+    func createCook (name:String){
+        let manager = GroupManager.sharedInstance
+        Router.COOKS_NEW(["name":name,"group_id":manager.myGroupId!]).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                self.retrieveCooks()
+                
+            case .Failure(let error):
+                break
+            }
+        }
     }
+
+    
+    @IBAction func addCookTapped(sender: AnyObject) {
+        let alert = UIAlertController.textAlert("メニューの追加", message: "作りたい料理を記入してね", placeholder: "メニュー", cancel: "キャンセル", ok: "追加") { (action,al) in
+            let field = al.textFields![0] as UITextField
+            self.createCook(field.text!)
+        }
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func cookTapped(sender: AnyObject) {
         let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
