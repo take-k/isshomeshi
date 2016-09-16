@@ -44,7 +44,8 @@ enum Router {
                 
             case .COOKS(let groupId):
                 return (.GET, "/cooks.json?group_id=\(groupId)", nil)
-                
+            case .COOKS_NEW(let params):
+                return (.POST, "/groups.json", params)
             default:
                 return (.GET, "/users/", nil)
             }

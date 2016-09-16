@@ -230,6 +230,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-r8-yAi">
                                             <rect key="frame" x="559" y="112" width="33" height="34"/>
                                             <state key="normal" backgroundImage="menuadd"/>
+                                            <connections>
+                                                <action selector="addCookTapped:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="qFj-2a-eWf"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

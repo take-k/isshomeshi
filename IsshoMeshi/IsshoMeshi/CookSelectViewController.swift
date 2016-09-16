@@ -89,6 +89,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
     }
     
     @IBAction func addCookTapped(sender: AnyObject) {
+    
     }
     
     @IBAction func cookTapped(sender: AnyObject) {
