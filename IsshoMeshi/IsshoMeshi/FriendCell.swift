@@ -33,6 +33,7 @@ class FriendCell: Cell,CellType {
     @IBOutlet weak var badgeImageView: UIImageView!
     @IBOutlet weak var badgeLabel: UILabel!
     
+    @IBOutlet weak var badgeView: UIView!
     override func configure() {
         guard let cellmodel = cellmodel else {
             return
@@ -40,7 +41,7 @@ class FriendCell: Cell,CellType {
         
         nameLabel.text = cellmodel.name
         badgeLabel.text = "\(cellmodel.ienow)"
-        
+//        badgeView.hidden = cellmodel.ienow == 0
         if let url = NSURL(string: cellmodel.imageUrl) {
             userImageView.af_setImageWithURL(url)
         }
