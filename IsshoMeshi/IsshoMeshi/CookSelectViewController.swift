@@ -71,15 +71,6 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
     }
     func updateButton() {
-        let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
-            guard let cella = cella as? CookCellModel ,cellb = cellb as? CookCellModel else {
-                return false
-            }
-            return cella.good > cellb.good
-        }
-        guard let cmodel = model as? CookCellModel else {
-            return
-        }
         //cookButton.titleLabel?.text = cmodel.name + "を作る"
         
     }
@@ -88,7 +79,28 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
     }
     
     @IBAction func cookTapped(sender: AnyObject) {
+        let model = sapporo.sections[0].cellmodels.maxElement { (cella, cellb) -> Bool in
+            guard let cella = cella as? CookCellModel ,cellb = cellb as? CookCellModel else {
+                return false
+            }
+            return cella.good < cellb.good
+        }
+        guard let cmodel = model as? CookCellModel else {
+            return
+        }
         
+        let alert = UIAlertController.alert("今日の一緒メシは\n\"\(cmodel.name)\"\nに決定！", message: "レシピを選んで早速作ってみよう", cancel: "キャンセル", ok: "レシピを調べる") { (action) in
+            let  str = "http://cookpad.com/search/\(cmodel.name)"
+            guard let url = NSURL(string: str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) else {
+                return
+            }
+            if UIApplication.sharedApplication().canOpenURL(url){
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        self.presentViewController(alert, animated: true, completion: nil)
+
+
     }
 }
 
