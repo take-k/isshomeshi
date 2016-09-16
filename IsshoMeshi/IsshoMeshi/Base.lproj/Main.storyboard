@@ -85,6 +85,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07r-7j-zHd" customClass="SpringButton" customModule="IsshoMeshi" customModuleProvider="target">
                                 <rect key="frame" x="225" y="154" width="150" height="150"/>
                                 <state key="normal" image="ienow"/>
+                                <state key="highlighted" image="now_push"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="force">
@@ -230,6 +231,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-r8-yAi">
                                             <rect key="frame" x="559" y="112" width="33" height="34"/>
                                             <state key="normal" backgroundImage="menuadd"/>
+                                            <state key="highlighted" image="now_push"/>
                                             <connections>
                                                 <action selector="addCookTapped:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="qFj-2a-eWf"/>
                                             </connections>
@@ -321,5 +323,6 @@
         <image name="ienow" width="150" height="150"/>
         <image name="menuadd" width="33" height="34"/>
         <image name="menulogo" width="347" height="104"/>
+        <image name="now_push" width="140" height="140"/>
     </resources>
 </document>
