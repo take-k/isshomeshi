@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (2.4.1):
     - Alamofire (~> 3.3)
   - Hakuba (2.1.1)
+  - Kingfisher (2.4.3)
   - RxCocoa (2.6.0):
     - RxSwift (~> 2.5)
   - RxSwift (2.6.0)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Hakuba
+  - Kingfisher
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0)
   - Sapporo
@@ -34,10 +36,13 @@ SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
   Hakuba: bc5a0422290d086c33a6424a26dd58c1a1136e94
+  Kingfisher: 322a9c1c5b03212c1e741d6bece72d387b01a77a
   RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
   RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
   Sapporo: 5c96eb2e3b62828ab390699623d200a66363a973
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 021a999c512936cd1600e34f2465d38441eea255
+
+COCOAPODS: 1.0.1
