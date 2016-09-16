@@ -17,13 +17,15 @@ enum Router {
     
     case GROUPS_NEW([String:AnyObject]?)
     
-    case USERGROUPS
+    case GROUPSUSER(Int)
+    case USERGROUPS(Int)
     case USERGROUPS_NEW([String:AnyObject]?)
     case USERGROUPS_DELETE(Int,([String:AnyObject]?))
     
     case COOKS(Int)
     case COOKS_NEW([String:AnyObject]?)
     case COOKS_UPDATE(Int,[String:AnyObject]?)
+    
     
     var request: Request {
         
@@ -42,12 +44,19 @@ enum Router {
             case .GROUPS_NEW(let params):
                 return (.POST, "/groups.json",params)
                 
+            case .GROUPSUSER(let id):
+                return (.GET, "/user_groups.json?user_id=\(id)", nil)
+            case .USERGROUPS(let id):
+                return (.GET, "/user_groups.json?group_id=\(id)", nil)
+            
+            
             case .COOKS(let groupId):
                 return (.GET, "/cooks.json?group_id=\(groupId)", nil)
             case .COOKS_NEW(let params):
                 return (.POST, "/cooks.json", params)
             case COOKS_UPDATE(let id,let params):
                 return (.PUT, "/cooks/\(id).json", params)
+            
             default:
                 return (.GET, "/users/", nil)
             }

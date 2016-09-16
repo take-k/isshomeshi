@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     
     func update(sender:NSTimer){
         retrieveUsers()
+        GroupManager.sharedInstance.retrieveGroup()
     }
     
     let myIdKey = "myId"

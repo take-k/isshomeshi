@@ -8,6 +8,7 @@
 
 import UIKit
 import Sapporo
+import SwiftyJSON
 
 class GroupManager {
     static let sharedInstance = GroupManager()
@@ -53,6 +54,50 @@ class GroupManager {
         
     }
     
+    
+    func retrieveGroup(){
+        if myId == 0 {return}
+        Router.GROUPSUSER(myId).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                if json.count > 0 {
+                    self.myGroupId = json[0]["group_id"].int
+                }
+                if let groupId = self.myGroupId {
+                    Router.USERGROUPS(groupId).request.responseJSON { (response) in
+                        debugPrint(response)
+                        switch response.result {
+                        case .Success(let value):
+                            let json = JSON(value)
+                            let friendModels = json.map({ (key,json) -> MemberCellModel in
+                                let friend = MemberCellModel(
+                                    name: json["name"].string ?? "タケダ",
+                                    id : json["id"].int ?? 0,
+                                    imageUrl: json["image_url"].string ?? "http://example.com",
+                                    ienow: json["ienow"].int ?? 0,
+                                    selectionHandler: { cell in
+                                        guard let model = (cell as? MemberCell)?.cellmodel else{
+                                            return
+                                        }
+                                    }
+                                )
+                                return friend
+                            })
+                            self.sapporo.sections[0].reset(friendModels).bump()
+                        case .Failure(let error):
+                            break
+                        }
+                    }
+
+                }
+            case .Failure(let error):
+                break
+            }
+        }
+    }
+
     func addGroupView() {
         guard let window = UIApplication.sharedApplication().keyWindow else {
             return
