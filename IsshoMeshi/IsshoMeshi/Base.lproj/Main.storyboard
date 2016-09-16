@@ -75,6 +75,7 @@
                                         <connections>
                                             <outlet property="badgeImageView" destination="KSW-vX-KXJ" id="yVO-8g-yVG"/>
                                             <outlet property="badgeLabel" destination="ayF-Yv-GxQ" id="MwL-CB-4gb"/>
+                                            <outlet property="badgeView" destination="A8Y-tK-mGO" id="Kzw-9S-9mX"/>
                                             <outlet property="nameLabel" destination="qu4-dL-rdb" id="hto-YY-hxg"/>
                                             <outlet property="userImageView" destination="utk-VG-gaZ" id="IXk-Yz-9qI"/>
                                         </connections>

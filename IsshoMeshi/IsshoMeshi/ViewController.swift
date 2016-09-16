@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.checkLogin()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend"), style: .Done, target: self, action: #selector(addUserTapped(_:)))
         self.hakuba.reset(Section().reset([]).bump())
@@ -27,28 +28,68 @@ class ViewController: UIViewController {
         GroupManager.sharedInstance.addGroupView()
     }
     
-    func addUserTapped (sendor :UIButton){
-        let alert = UIAlertController(title: "友だち追加", message: "友だちの名前を入力してね", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textfield) in
-            textfield.placeholder = "ユーザー名"
+    let myIdKey = "myId"
+    func checkLogin (){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setInteger(0 , forKey: self.myIdKey)
+        
+        let myId = defaults.integerForKey(myIdKey)
+        let manager = GroupManager.sharedInstance
+        if  myId == 0 || manager.myId == 0{
+            let alert = UIAlertController.textAlert("登録", message: "ユーザー名を入力してください", placeholder: "ユーザー名", cancel: nil, ok: "一緒メシに登録") { (action,al) in
+                let field = al.textFields![0] as UITextField
+                self.createUser(field.text!)
+            }
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        alert.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
-            let field = alert.textFields![0] as UITextField
+        manager.myId = myId
+    }
+    
+    func addUserTapped (sendor :UIButton){
+        
+        let alert = UIAlertController.textAlert("友だち追加", message: "友達の名前を入力してね", placeholder: "ユーザー名", cancel: "キャンセル", ok: "追加") { (action,al) in
+            let field = al.textFields![0] as UITextField
             self.createUser(field.text!)
-        }))
+        }
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func createUser (name:String){
+
+        Router.USERS_NEW(["name":name]).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                //manager.myGroupId = json["id"].int
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if defaults.integerForKey(self.myIdKey) == 0 {
+                    defaults.setInteger(json["id"].int ?? 0 , forKey: self.myIdKey)
+                    defaults.synchronize()
+                }
+                
+                self.retrieveUsers()
+                
+            case .Failure(let error):
+                break
+            }
+        }
     }
     
     @IBAction func ienowTapped(sender: AnyObject) {
         guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
             return
         }
-        model.ienow += 1
-        model.bump()
+        self.hakuba.sections[0].cellmodels.forEach { (model) in
+            if let model = model as? FriendCellModel {
+                if model.id == GroupManager.sharedInstance.myId {
+                    model.ienow += 1
+                    model.bump()
+                }
+            }
+        }
         sendIenow()
     }
     
@@ -123,7 +164,7 @@ class ViewController: UIViewController {
             case .Failure(let error):
                 break
             }
-        }    }
-
+        }
+    }
 }
 

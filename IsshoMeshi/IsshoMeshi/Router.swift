@@ -35,7 +35,7 @@ enum Router {
             case .USERS_COUNTER_UPDATE(let id,let params):
                 return (.PUT, "/users/\(id).json", params)
             case .USERS_NEW(let params):
-                return (.GET, "/users.json", params)
+                return (.POST, "/users.json", params)
             case .USERS_UPDATE(let id,let params):
                 return (.GET, "/users/\(id).json", params)
                 
