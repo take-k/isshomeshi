@@ -66,8 +66,10 @@ class ViewController: UIViewController {
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 if defaults.integerForKey(self.myIdKey) == 0 {
-                    defaults.setInteger(json["id"].int ?? 0 , forKey: self.myIdKey)
+                    let id = json["id"].int ?? 0
+                    defaults.setInteger(id , forKey: self.myIdKey)
                     defaults.synchronize()
+                    GroupManager.sharedInstance.myId = id
                 }
                 
                 self.retrieveUsers()
