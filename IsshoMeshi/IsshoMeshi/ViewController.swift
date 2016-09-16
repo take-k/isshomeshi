@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         retrieveUsers()
         GroupManager.sharedInstance.viewController = self
         GroupManager.sharedInstance.addGroupView()
+        tableView.contentInset.top = -60
     }
     
     let myIdKey = "myId"

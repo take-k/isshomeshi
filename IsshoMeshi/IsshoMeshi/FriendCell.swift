@@ -21,7 +21,7 @@ class FriendCellModel: CellModel {
         self.name = name
         self.imageUrl = imageUrl
         self.ienow = ienow
-        super.init(cell: FriendCell.self, selectionHandler: selectionHandler)
+        super.init(cell: FriendCell.self,height:60, selectionHandler: selectionHandler)
     }
 }
 

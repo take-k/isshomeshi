@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-3L-CBa">
                                 <rect key="frame" x="0.0" y="320" width="600" height="280"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.8980392157" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="60" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8C-sw-Djq" id="lEa-zy-1Il">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utk-VG-gaZ">
@@ -264,7 +264,8 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-9d-qis">
                                             <rect key="frame" x="150" y="20" width="300" height="50"/>
                                             <color key="backgroundColor" red="0.70196078431372544" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="一緒メシを選ぼう！"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
+                                            <state key="normal" title="投票結果"/>
                                             <connections>
                                                 <action selector="cookTapped:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="Sn4-v3-wTO"/>
                                             </connections>

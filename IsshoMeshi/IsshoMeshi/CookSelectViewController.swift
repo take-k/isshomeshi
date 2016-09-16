@@ -32,6 +32,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         sapporo.reset(section).bump()
     }
     
+//    let timer = NSTimer.scheduledTimerWithTimeInterval(5, invocation: <#T##NSInvocation#>, repeats: <#T##Bool#>)
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -97,7 +98,6 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
         footer.name = cmodel.name
         sapporo.sections[0].footerViewModel = footer
-        sapporo.sections[0].bump()
     }
     
     func createCook (name:String){
@@ -191,6 +191,5 @@ class FooterView:SAFlowLayoutSupplementaryView,SAFlowLayoutSupplementaryViewType
         guard let viewmodel = viewmodel else {
             return
         }
-        cookButton.titleLabel?.text = viewmodel.name + "を作る"
     }
 }
