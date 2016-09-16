@@ -8,7 +8,7 @@
 
 import UIKit
 import Hakuba
-import AlamofireImage
+import Kingfisher
 
 class FriendCellModel: CellModel {
     let id:Int
@@ -43,7 +43,7 @@ class FriendCell: Cell,CellType {
         badgeLabel.text = "\(cellmodel.ienow)"
 //        badgeView.hidden = cellmodel.ienow == 0
         if let url = NSURL(string: cellmodel.imageUrl) {
-            userImageView.af_setImageWithURL(url)
+            userImageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "men"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
         }
         userImageView.layer.cornerRadius = 25
         

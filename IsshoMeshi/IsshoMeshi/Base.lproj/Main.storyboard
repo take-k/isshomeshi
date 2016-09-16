@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8C-sw-Djq" id="lEa-zy-1Il">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utk-VG-gaZ">
@@ -110,7 +110,7 @@
                             <constraint firstItem="07r-7j-zHd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6lj-Zm-cks"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" id="OdI-PE-7Tq"/>
                             <constraint firstAttribute="trailing" secondItem="mD9-3L-CBa" secondAttribute="trailing" id="Z3B-hJ-wW8"/>
-                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" constant="20" id="fAx-s4-pWJ"/>
+                            <constraint firstItem="mD9-3L-CBa" firstAttribute="top" secondItem="07r-7j-zHd" secondAttribute="bottom" constant="10" id="fAx-s4-pWJ"/>
                             <constraint firstAttribute="trailing" secondItem="07r-7j-zHd" secondAttribute="trailing" id="hW3-9q-z77"/>
                             <constraint firstItem="mD9-3L-CBa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ieT-01-wZJ"/>
                             <constraint firstItem="07r-7j-zHd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="oqb-dw-bc8"/>
