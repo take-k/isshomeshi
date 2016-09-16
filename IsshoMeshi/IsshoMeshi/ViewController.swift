@@ -32,8 +32,6 @@ class ViewController: UIViewController {
     func checkLogin (){
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        defaults.setInteger(0 , forKey: self.myIdKey)
-        
         let myId = defaults.integerForKey(myIdKey)
         let manager = GroupManager.sharedInstance
         if  myId == 0 || manager.myId == 0{
