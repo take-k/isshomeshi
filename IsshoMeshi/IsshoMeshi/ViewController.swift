@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
     
     let friendModels:[FriendCellModel]? = nil
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
@@ -28,7 +28,19 @@ class ViewController: UIViewController {
     }
     
     func addUserTapped (sendor :UIButton){
-        
+        let alert = UIAlertController(title: "友だち追加", message: "友だちの名前を入力してね", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler { (textfield) in
+            textfield.placeholder = "ユーザー名"
+        }
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+            let field = alert.textFields![0] as UITextField
+            self.createUser(field.text!)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func createUser (name:String){
     }
     
     @IBAction func ienowTapped(sender: AnyObject) {
@@ -53,10 +65,13 @@ class ViewController: UIViewController {
                         imageUrl: json["image_url"].string ?? "http://example.com",
                         ienow: json["ienow"].int ?? 0,
                         selectionHandler: { cell in
+                            if let indexPath = self.tableView.indexPathForCell(cell) {
+                                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                            }
                             guard let model = (cell as? FriendCell)?.cellmodel else{
                                 return
                             }
-                            GroupManager.sharedInstance.addMemberWithName(model.name, imageUrl: model.imageUrl, ienow: model.ienow)
+                            GroupManager.sharedInstance.addMemberWithName(model.name,id:model.id, imageUrl: model.imageUrl, ienow: model.ienow)
                         }
                     )
                     friend.height = 60
@@ -74,8 +89,8 @@ class ViewController: UIViewController {
         guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
             return
         }
-        
-        Router.USERS_COUNTER_UPDATE(["ienow":model.ienow]).request.responseJSON { (response) in
+//        guard let GroupManager.sharedInstance.myId
+        Router.USERS_COUNTER_UPDATE(GroupManager.sharedInstance.myId,["ienow":model.ienow]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
@@ -85,10 +100,30 @@ class ViewController: UIViewController {
             }
         }
     }
-    func nextTapped(sendor:UIButton){
-        GroupManager.sharedInstance.hideNextButton()
-        performSegueWithIdentifier("showCookSelect", sender: sendor)
+    
+    func sendMembers() {
+
     }
+    
+    func nextTapped(sender:UIButton){
+        let manager = GroupManager.sharedInstance
+        let models = manager.sapporo.sections[0].cellmodels
+        let params = ["name":manager.myId,"date":"2011-01-01","location":"どこか",
+                      "user_ids":models.map({ (model) -> Int in
+                        return (model as! MemberCellModel).id
+                      })]
+        Router.GROUPS_NEW(params as! [String : AnyObject]).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                manager.myGroupId = json["id"].int
+                manager.hideNextButton()
+                self.performSegueWithIdentifier("showCookSelect", sender: sender)
+            case .Failure(let error):
+                break
+            }
+        }    }
 
 }
 

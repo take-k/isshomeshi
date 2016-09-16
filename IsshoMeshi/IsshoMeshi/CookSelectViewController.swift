@@ -8,6 +8,7 @@
 
 import UIKit
 import Sapporo
+import SwiftyJSON
 
 class CookSelectViewController: UIViewController ,SapporoDelegate{
 
@@ -23,27 +24,50 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         layout.itemSize = CGSizeMake( 100, 70)
         sapporo.setLayout(layout)
         
-        
-        let models = (1...9).map { num in
-            return CookCellModel(name: "餃子", linkUrl: "cell\(num % 4)", good: 1) { (cell) in
-                guard let cook = (cell as? CookCell)?.cellmodel else {
-                    return
-                }
-                cook.good += 1
-                cook.bump()
-            }
-        }
-        
         let section = SASection()
         section.inset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
         section.minimumLineSpacing = 40
         section.headerViewModel = HeaderViewModel()
         section.footerViewModel = FooterViewModel()
-        
-        section.reset(models)
         sapporo.reset(section).bump()
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        retrieveCooks()
+    }
+    
+    func retrieveCooks(){
+        guard let groupId = GroupManager.sharedInstance.myGroupId else {
+            return
+        }
+
+        Router.COOKS(groupId).request.responseJSON { (response) in
+            debugPrint(response)
+            switch (response.result) {
+            case .Success(let value):
+                let json = JSON(value)
+                let models = json.map({ (key,json) -> CookCellModel in
+                    let id = json["id"].int ?? 0
+                    return CookCellModel(name: json["name"].string ?? "鍋",
+                        id: json["id"].int ?? 0,
+                        linkUrl: "cell\(id % 4)",
+                        good: json["good"].int ?? 0,
+                        selectionHandler: { (cell) in
+                            guard let model = (cell as? CookCell)?.cellmodel else {
+                                return
+                            }
+                            model.good += 1
+                            model.bump()
+                    })
+                })
+                self.sapporo.sections[0].reset(models).bump()
+            case .Failure(let error):
+                break
+            }
+        }
+    }
     
     @IBAction func addCookTapped(sender: AnyObject) {
     }

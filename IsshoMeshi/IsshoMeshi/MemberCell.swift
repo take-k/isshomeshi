@@ -10,11 +10,13 @@ import UIKit
 import Sapporo
 
 class MemberCellModel: SACellModel {
+    let id:Int
     let name :String
     let imageUrl:String
     let ienow:Int
     
-    init(name: String, imageUrl:String, ienow:Int , selectionHandler: SASelectionHandler) {
+    init(name: String,id:Int, imageUrl:String, ienow:Int , selectionHandler: SASelectionHandler) {
+        self.id = id
         self.name = name
         self.imageUrl = imageUrl
         self.ienow = ienow
