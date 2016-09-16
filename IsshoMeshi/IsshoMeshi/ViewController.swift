@@ -77,8 +77,8 @@ class ViewController: UIViewController {
         guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
             return
         }
-        
-        Router.USERS_COUNTER_UPDATE(["ienow":model.ienow]).request.responseJSON { (response) in
+//        guard let GroupManager.sharedInstance.myId
+        Router.USERS_COUNTER_UPDATE(GroupManager.sharedInstance.myId,["ienow":model.ienow]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
