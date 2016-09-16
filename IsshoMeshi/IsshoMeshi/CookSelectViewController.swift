@@ -30,15 +30,20 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         section.headerViewModel = HeaderViewModel()
         section.footerViewModel = FooterViewModel()
         sapporo.reset(section).bump()
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(update(_:)), userInfo: nil, repeats: true)
+        
     }
     
-//    let timer = NSTimer.scheduledTimerWithTimeInterval(5, invocation: <#T##NSInvocation#>, repeats: <#T##Bool#>)
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         retrieveCooks()
     }
     
+    func update(sender:NSTimer){
+        retrieveCooks()
+    }
     func retrieveCooks(){
         guard let groupId = GroupManager.sharedInstance.myGroupId else {
             return

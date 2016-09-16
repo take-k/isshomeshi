@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         GroupManager.sharedInstance.viewController = self
         GroupManager.sharedInstance.addGroupView()
         tableView.contentInset.top = -60
+        let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(update(_:)), userInfo: nil, repeats: true)
+        
+    }
+    
+    func update(sender:NSTimer){
+        retrieveUsers()
     }
     
     let myIdKey = "myId"
