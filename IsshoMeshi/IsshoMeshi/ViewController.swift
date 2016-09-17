@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.checkLogin()
+        //self.checkLogin()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend"), style: .Done, target: self, action: #selector(addUserTapped(_:)))
         self.hakuba.reset(Section().reset([]).bump())

@@ -18,7 +18,7 @@ class GroupManager {
     let nextButton: UIButton
     let label: UILabel
     
-    var myId:Int = 0
+    var myId:Int = 2
     var myGroupId:Int?
     
     var viewController:ViewController? = nil
