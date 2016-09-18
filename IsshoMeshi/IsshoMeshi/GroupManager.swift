@@ -30,8 +30,15 @@ class GroupManager {
             defaults.synchronize()
         }
     }
-    
-    var myGroupId:Int?
+    var _myGroupId:Int? = nil
+    var myGroupId:Int? {
+        get {
+            return 1
+        }
+        set {
+            _myGroupId = newValue
+        }
+    }
     
     var viewController:ViewController? = nil
     
