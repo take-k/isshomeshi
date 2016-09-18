@@ -26,9 +26,11 @@ extension UIAlertController {
         return alert
     }
     
-    class func alert(title:String,message:String,cancel:String,ok:String,handler:((UIAlertAction) -> Void)?) -> UIAlertController{
+    class func alert(title:String,message:String,cancel:String?,ok:String,handler:((UIAlertAction) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: cancel, style: .Cancel, handler: nil))
+        if let cancel = cancel {
+            alert.addAction(UIAlertAction(title: cancel, style: .Cancel, handler: nil))
+        }
         alert.addAction(UIAlertAction(title: ok, style: .Default, handler: handler))
         return alert
     }
