@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     func checkLogin (){
         if  GroupManager.userId == 0{
-            let alert = UIAlertController.textAlert("ログイン又は登録", message: "ユーザー名を入力してください", placeholder: "ユーザー名", cancel: nil, ok: "一緒メシにログイン・登録") { (action,al) in
+            let alert = UIAlertController.textAlert("ログイン・登録", message: "ユーザー名を入力してください", placeholder: "ユーザー名", cancel: nil, ok: "ログイン・登録") { (action,al) in
                 let field = al.textFields![0] as UITextField
                 self.createUser(field.text!)
             }
