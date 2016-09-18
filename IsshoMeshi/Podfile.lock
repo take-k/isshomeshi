@@ -1,48 +1,24 @@
 PODS:
-  - Alamofire (3.4.1)
-  - AlamofireImage (2.4.1):
-    - Alamofire (~> 3.3)
+  - Alamofire (3.5.0)
   - Hakuba (2.1.1)
-  - Kingfisher (2.4.3)
-  - RxCocoa (2.6.0):
-    - RxSwift (~> 2.5)
-  - RxSwift (2.6.0)
+  - Kingfisher (2.6.0)
   - Sapporo (1.1)
-  - Spring (1.0.3)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage
+  - Alamofire (= 3.5.0)
   - Hakuba
-  - Kingfisher (~> 2.4)
-  - RxCocoa (~> 2.0)
-  - RxSwift (~> 2.0)
+  - Kingfisher (= 2.6.0)
   - Sapporo
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftyJSON
 
-EXTERNAL SOURCES:
-  Spring:
-    :branch: swift2
-    :git: https://github.com/MengTo/Spring.git
-
-CHECKOUT OPTIONS:
-  Spring:
-    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
-    :git: https://github.com/MengTo/Spring.git
-
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   Hakuba: bc5a0422290d086c33a6424a26dd58c1a1136e94
-  Kingfisher: 322a9c1c5b03212c1e741d6bece72d387b01a77a
-  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
-  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  Kingfisher: d84c5fd176ea86cc7b8aac65fd55feda6f70f130
   Sapporo: 5c96eb2e3b62828ab390699623d200a66363a973
-  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: a23f96d0a94e6443dbfafbcca7a193bc36212731
+PODFILE CHECKSUM: ce3bee0f7a9a89f36ac9e21be8c8f5bebd0faee0
 
 COCOAPODS: 1.0.1

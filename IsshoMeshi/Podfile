@@ -3,14 +3,17 @@
 
 target 'IsshoMeshi' do
   use_frameworks!
-  pod 'Alamofire'
-  pod 'AlamofireImage'
+  pod 'Alamofire', '3.5.0'
   pod 'SwiftyJSON'
-  pod 'RxSwift',    '~> 2.0'
-  pod 'RxCocoa',    '~> 2.0'
   pod 'Hakuba'
   pod 'Sapporo'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
-  pod 'Kingfisher', '~> 2.4'
+  pod 'Kingfisher', '2.6.0'
 end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3'
+    end
+  end
+end
