@@ -97,8 +97,8 @@ class ViewController: UIViewController {
                 let friendModels = json.map({ (key,json) -> FriendCellModel in
                     let friend = FriendCellModel(
                         id : json["id"].int ?? 0,
-                        name: json["name"].string ?? "タケダ",
-                        imageUrl: json["image_url"].string ?? "http://example.com",
+                        name: json["name"].string ?? "不明",
+                        imageUrl: json["image_url"].string ?? "",
                         ienow: json["ienow"].int ?? 0,
                         selectionHandler: { cell in
                             if let indexPath = self.tableView.indexPathForCell(cell) {
