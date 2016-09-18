@@ -69,23 +69,21 @@ class ViewController: UIViewController {
                 
                 self.retrieveUsers()
                 
-            case .Failure(let error):
+            case .Failure(_):
                 break
             }
         }
     }
     
     @IBAction func ienowTapped(sender: AnyObject) {
-        guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
-            return
-        }
         self.hakuba.sections[0].cellmodels.forEach { (model) in
-            if let model = model as? FriendCellModel {
-                if model.id == GroupManager.userId {
-                    model.ienow += 1
-                    model.bump()
-                    sendIenow(model.ienow)
-                }
+            guard let model = model as? FriendCellModel else {
+                return
+            }
+            if model.id == GroupManager.userId {
+                model.ienow += 1
+                model.bump()
+                sendIenow(model.ienow)
             }
         }
     }
@@ -117,7 +115,7 @@ class ViewController: UIViewController {
                     return friend
                 })
                 self.hakuba.sections[0].reset(friendModels).bump()
-            case .Failure(let error):
+            case .Failure(_):
                 break
             }
         }
@@ -127,9 +125,9 @@ class ViewController: UIViewController {
         Router.USERS_COUNTER_UPDATE(GroupManager.userId,["ienow":num]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
-            case .Success(let value):
-                let json = JSON(value)
-            case .Failure(let error):
+            case .Success(_):
+                break
+            case .Failure(_):
                 break
             }
         }
@@ -154,7 +152,7 @@ class ViewController: UIViewController {
                 manager.myGroupId = json["id"].int
                 manager.hideNextButton()
                 self.performSegueWithIdentifier("showCookSelect", sender: sender)
-            case .Failure(let error):
+            case .Failure(_):
                 break
             }
         }

@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //デモ用
-        let defaults = NSUserDefaults.standardUserDefaults()
-        //defaults.setInteger(0 , forKey: "myId")
         return true
     }
 

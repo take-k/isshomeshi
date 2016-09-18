@@ -70,9 +70,9 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                             Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
                                 debugPrint(response)
                                 switch (response.result) {
-                                case .Success(let value):
-                                    let json = JSON(value)
-                                case .Failure(let error):
+                                case .Success(_):
+                                    break
+                                case .Failure(_):
                                     break
                                 }
                             })
@@ -81,7 +81,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
-            case .Failure(let error):
+            case .Failure(_):
                 break
             }
         }
@@ -110,11 +110,10 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         Router.COOKS_NEW(["name":name,"group_id":manager.myGroupId!]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
-            case .Success(let value):
-                let json = JSON(value)
+            case .Success(_):
                 self.retrieveCooks()
                 
-            case .Failure(let error):
+            case .Failure(_):
                 break
             }
         }
@@ -143,8 +142,9 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
         
         let alert = UIAlertController.alert("今日の一緒メシは\n\"\(cmodel.name)\"\nに決定！", message: "レシピを選んで早速作ってみよう", cancel: "キャンセル", ok: "レシピを調べる") { (action) in
-            let  str = "http://cookpad.com/search/\(cmodel.name)"
-            guard let url = NSURL(string: str.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) else {
+            guard let encodedBody = cmodel.name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet()) ,url = NSURL(string: "http://cookpad.com/search/\(encodedBody)") else {
+                let alert = UIAlertController.alert("レシピを探せません。", message: "正しい料理名を入力してください", cancel: "キャンセル", ok: "OK", handler: nil)
+                self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
             if UIApplication.sharedApplication().canOpenURL(url){
