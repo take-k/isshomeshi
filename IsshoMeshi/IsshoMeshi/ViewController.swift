@@ -84,10 +84,10 @@ class ViewController: UIViewController {
                 if model.id == GroupManager.userId {
                     model.ienow += 1
                     model.bump()
+                    sendIenow(model.ienow)
                 }
             }
         }
-        sendIenow()
     }
     
     func retrieveUsers(){
@@ -123,12 +123,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func sendIenow() {
-        guard let model = self.hakuba.sections[0].cellmodels[0] as? FriendCellModel else {
-            return
-        }
-//        guard let GroupManager.sharedInstance.myId
-        Router.USERS_COUNTER_UPDATE(GroupManager.userId,["ienow":model.ienow]).request.responseJSON { (response) in
+    func sendIenow(num:Int) {
+        Router.USERS_COUNTER_UPDATE(GroupManager.userId,["ienow":num]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
