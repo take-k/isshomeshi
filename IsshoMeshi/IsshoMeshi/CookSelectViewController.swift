@@ -44,6 +44,24 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
     func update(sender:NSTimer){
         retrieveCooks()
     }
+    
+    func addGood(model:CookCellModel) {
+        model.good += 1
+        model.bump()
+        
+        Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
+            debugPrint(response)
+            switch (response.result) {
+            case .Success(_):
+                break
+            case .Failure(_):
+                break
+            }
+        })
+        
+        //self.updateButton()
+    }
+    
     func retrieveCooks(){
         guard let groupId = GroupManager.sharedInstance.myGroupId else {
             return
@@ -64,20 +82,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                             guard let model = (cell as? CookCell)?.cellmodel else {
                                 return
                             }
-                            model.good += 1
-                            model.bump()
-                            
-                            Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
-                                debugPrint(response)
-                                switch (response.result) {
-                                case .Success(_):
-                                    break
-                                case .Failure(_):
-                                    break
-                                }
-                            })
-                            
-                            self.updateButton()
+                            self.addGood(model)
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
