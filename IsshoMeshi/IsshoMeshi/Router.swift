@@ -8,7 +8,7 @@
 import Alamofire
 
 enum Router {
-    static let baseURLString = "https://isshomeshi.herokuapp.com/"
+    static let baseURLString = "https://localhost:3000/"
     
     case USERS
     case USERS_COUNTER_UPDATE(Int,[String:AnyObject]?)
