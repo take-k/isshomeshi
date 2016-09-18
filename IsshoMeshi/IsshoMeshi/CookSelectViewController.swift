@@ -106,8 +106,10 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
     }
     
     func createCook (name:String){
-        let manager = GroupManager.sharedInstance
-        Router.COOKS_NEW(["name":name,"group_id":manager.myGroupId!]).request.responseJSON { (response) in
+        guard let groupId = GroupManager.sharedInstance.myGroupId else {
+            return
+        }
+        Router.COOKS_NEW(["name":name,"group_id":groupId]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(_):
@@ -121,8 +123,10 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
 
     
     @IBAction func addCookTapped(sender: AnyObject) {
-        let alert = UIAlertController.textAlert("メニューの追加", message: "作りたい料理を記入してね", placeholder: "メニュー", cancel: "キャンセル", ok: "追加") { (action,al) in
-            let field = al.textFields![0] as UITextField
+        let alert = UIAlertController.textAlert("メニューの追加", message: "作りたい料理を記入してね", placeholder: "メニュー", cancel: "キャンセル", ok: "追加") { (action,alertController) in
+            guard let field = alertController.textFields?.first else {
+                return
+            }
             self.createCook(field.text!)
         }
         self.presentViewController(alert, animated: true, completion: nil)
