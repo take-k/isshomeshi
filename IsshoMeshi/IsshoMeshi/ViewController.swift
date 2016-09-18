@@ -10,7 +10,7 @@ import UIKit
 import Hakuba
 import Alamofire
 import SwiftyJSON
-//
+
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
@@ -35,20 +35,14 @@ class ViewController: UIViewController {
         retrieveUsers()
     }
     
-    let myIdKey = "myId"
     func checkLogin (){
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        let myId = defaults.integerForKey(myIdKey)
-        let manager = GroupManager.sharedInstance
-        if  myId == 0 || manager.myId == 0{
+        if  GroupManager.userId == 0{
             let alert = UIAlertController.textAlert("登録", message: "ユーザー名を入力してください", placeholder: "ユーザー名", cancel: nil, ok: "一緒メシに登録") { (action,al) in
                 let field = al.textFields![0] as UITextField
                 self.createUser(field.text!)
             }
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        manager.myId = myId
     }
     
     func addUserTapped (sendor :UIButton){
@@ -69,12 +63,8 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 //manager.myGroupId = json["id"].int
                 
-                let defaults = NSUserDefaults.standardUserDefaults()
-                if defaults.integerForKey(self.myIdKey) == 0 {
-                    let id = json["id"].int ?? 0
-                    defaults.setInteger(id , forKey: self.myIdKey)
-                    defaults.synchronize()
-                    GroupManager.sharedInstance.myId = id
+                if GroupManager.userId == 0 {
+                    GroupManager.userId = json["id"].int ?? 0
                 }
                 
                 self.retrieveUsers()
@@ -91,7 +81,7 @@ class ViewController: UIViewController {
         }
         self.hakuba.sections[0].cellmodels.forEach { (model) in
             if let model = model as? FriendCellModel {
-                if model.id == GroupManager.sharedInstance.myId {
+                if model.id == GroupManager.userId {
                     model.ienow += 1
                     model.bump()
                 }
@@ -138,7 +128,7 @@ class ViewController: UIViewController {
             return
         }
 //        guard let GroupManager.sharedInstance.myId
-        Router.USERS_COUNTER_UPDATE(GroupManager.sharedInstance.myId,["ienow":model.ienow]).request.responseJSON { (response) in
+        Router.USERS_COUNTER_UPDATE(GroupManager.userId,["ienow":model.ienow]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
@@ -156,11 +146,11 @@ class ViewController: UIViewController {
     func nextTapped(sender:UIButton){
         let manager = GroupManager.sharedInstance
         let models = manager.sapporo.sections[0].cellmodels
-        let params = ["name":manager.myId,"date":"2011-01-01","location":"どこか",
+        let params = ["name":GroupManager.userId,"date":"2011-01-01","location":"どこか",
                       "user_ids":models.map({ (model) -> Int in
                         return (model as! MemberCellModel).id
                       })]
-        Router.GROUPS_NEW(params as! [String : AnyObject]).request.responseJSON { (response) in
+        Router.GROUPS_NEW(params as? [String : AnyObject]).request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):

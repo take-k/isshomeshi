@@ -18,7 +18,19 @@ class GroupManager {
     let nextButton: UIButton
     let label: UILabel
     
-    var myId:Int = 2
+    static let defaults = NSUserDefaults.standardUserDefaults()
+
+    static var userId:Int {
+        get {
+            defaults.registerDefaults(["userId":0])
+            return defaults.integerForKey("userId")
+        }
+        set {
+            defaults.setInteger(newValue, forKey: "userId")
+            defaults.synchronize()
+        }
+    }
+    
     var myGroupId:Int?
     
     var viewController:ViewController? = nil
