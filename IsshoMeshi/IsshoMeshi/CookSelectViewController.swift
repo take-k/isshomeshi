@@ -82,7 +82,8 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                             guard let model = (cell as? CookCell)?.cellmodel else {
                                 return
                             }
-                            self.addGood(model)
+                            //self.addGood(model)
+                            
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
@@ -163,6 +164,28 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         self.presentViewController(alert, animated: true, completion: nil)
 
 
+    }
+
+    @IBAction func cellButtonTapped(sender: UIButton, forEvent event: UIEvent) {
+        guard let model = cookCellForControlEvent(event)?.cellmodel else {
+            return
+        }
+        addGood(model)
+        print("tapped")
+    }
+    
+    func cookCellForControlEvent(event:UIEvent) -> CookCell?{
+        guard let touch = event.allTouches()?.first else {
+            return nil
+        }
+        let p = touch.locationInView(self.collectionView)
+        guard let indexPath = self.collectionView.indexPathForItemAtPoint(p) else {
+            return nil
+        }
+        guard let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? CookCell else {
+            return nil
+        }
+        return cell
     }
 }
 

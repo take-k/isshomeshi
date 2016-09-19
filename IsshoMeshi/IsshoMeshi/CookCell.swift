@@ -31,6 +31,11 @@ class CookCell: SACell ,SACellType {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goodLabel: UILabel!
     
+    @IBOutlet weak var goodButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     override func configure() {
         super.configure()
@@ -38,7 +43,7 @@ class CookCell: SACell ,SACellType {
         guard let cellmodel = cellmodel else {
             return
         }
-        imageView.image = UIImage(named: cellmodel.linkUrl)
+        //imageView.image = UIImage(named: cellmodel.linkUrl)
         nameLabel.text = cellmodel.name
         goodLabel.text = "\(cellmodel.good)"
     }
