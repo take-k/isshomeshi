@@ -170,14 +170,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell0" translatesAutoresizingMaskIntoConstraints="NO" id="wa7-Zy-pUg"/>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfG-fM-Xpj">
-                                                    <state key="normal" image="cell0"/>
-                                                    <state key="highlighted" image="touch0"/>
-                                                    <connections>
-                                                        <action selector="cellButtonTapped:forEvent:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="FHg-V5-By0"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="餃子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-CX-EYS">
                                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,28 +191,19 @@
                                             <constraint firstAttribute="trailing" secondItem="ZwK-CX-EYS" secondAttribute="trailing" id="5B6-wD-4Pf"/>
                                             <constraint firstItem="ZwK-CX-EYS" firstAttribute="leading" secondItem="R1v-aq-1mv" secondAttribute="leading" id="7CW-kb-eyP"/>
                                             <constraint firstItem="FTm-9t-Vzr" firstAttribute="top" secondItem="ZwK-CX-EYS" secondAttribute="bottom" id="7hP-Db-qko"/>
-                                            <constraint firstItem="jfG-fM-Xpj" firstAttribute="top" secondItem="R1v-aq-1mv" secondAttribute="top" id="EDa-iQ-lex"/>
                                             <constraint firstItem="FTm-9t-Vzr" firstAttribute="height" secondItem="a6g-ra-icQ" secondAttribute="height" id="GCh-Es-eUU"/>
                                             <constraint firstItem="a6g-ra-icQ" firstAttribute="top" secondItem="ZwK-CX-EYS" secondAttribute="bottom" id="JZ4-Ml-Chv"/>
                                             <constraint firstItem="FTm-9t-Vzr" firstAttribute="leading" secondItem="a6g-ra-icQ" secondAttribute="trailing" id="Mis-qW-Ldc"/>
                                             <constraint firstItem="a6g-ra-icQ" firstAttribute="leading" secondItem="R1v-aq-1mv" secondAttribute="leading" id="Sgo-nK-htV"/>
-                                            <constraint firstItem="wa7-Zy-pUg" firstAttribute="leading" secondItem="R1v-aq-1mv" secondAttribute="leading" id="V7z-pM-nH8"/>
-                                            <constraint firstAttribute="trailing" secondItem="jfG-fM-Xpj" secondAttribute="trailing" id="W1A-04-ufS"/>
                                             <constraint firstItem="ZwK-CX-EYS" firstAttribute="height" secondItem="R1v-aq-1mv" secondAttribute="height" multiplier="0.57" id="YRC-TP-v24"/>
-                                            <constraint firstItem="wa7-Zy-pUg" firstAttribute="top" secondItem="R1v-aq-1mv" secondAttribute="top" id="Z8p-IX-I3C"/>
-                                            <constraint firstAttribute="trailing" secondItem="wa7-Zy-pUg" secondAttribute="trailing" id="bva-OA-NFJ"/>
                                             <constraint firstAttribute="trailing" secondItem="FTm-9t-Vzr" secondAttribute="trailing" id="eqO-k1-C3i"/>
-                                            <constraint firstAttribute="bottom" secondItem="wa7-Zy-pUg" secondAttribute="bottom" id="i9O-9L-G53"/>
                                             <constraint firstItem="FTm-9t-Vzr" firstAttribute="height" secondItem="R1v-aq-1mv" secondAttribute="height" multiplier="0.314" id="iUZ-hA-Oie"/>
-                                            <constraint firstAttribute="bottom" secondItem="jfG-fM-Xpj" secondAttribute="bottom" id="lpc-nh-4P1"/>
                                             <constraint firstItem="a6g-ra-icQ" firstAttribute="width" secondItem="R1v-aq-1mv" secondAttribute="width" multiplier="0.3" id="mav-sx-WFT"/>
                                             <constraint firstItem="ZwK-CX-EYS" firstAttribute="top" secondItem="R1v-aq-1mv" secondAttribute="top" id="oOc-gw-qiW"/>
-                                            <constraint firstItem="jfG-fM-Xpj" firstAttribute="leading" secondItem="R1v-aq-1mv" secondAttribute="leading" id="zYz-ok-nzw"/>
                                         </constraints>
+                                        <size key="customSize" width="100" height="70"/>
                                         <connections>
-                                            <outlet property="goodButton" destination="jfG-fM-Xpj" id="v14-9n-NV6"/>
                                             <outlet property="goodLabel" destination="a6g-ra-icQ" id="O1w-Cx-dmy"/>
-                                            <outlet property="imageView" destination="wa7-Zy-pUg" id="gEW-uA-5RM"/>
                                             <outlet property="nameLabel" destination="ZwK-CX-EYS" id="dtd-Ph-fdZ"/>
                                         </connections>
                                     </collectionViewCell>
@@ -325,12 +308,10 @@
     </scenes>
     <resources>
         <image name="badge" width="47" height="47"/>
-        <image name="cell0" width="100" height="72"/>
         <image name="ienow" width="150" height="150"/>
         <image name="line" width="740" height="6"/>
         <image name="menuadd" width="33" height="34"/>
         <image name="menulogo" width="347" height="104"/>
         <image name="now_push" width="150" height="150"/>
-        <image name="touch0" width="106" height="77"/>
     </resources>
 </document>

@@ -27,14 +27,24 @@ class CookCellModel: SACellModel {
 
 class CookCell: SACell ,SACellType {
     typealias CellModel = CookCellModel
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goodLabel: UILabel!
     
     @IBOutlet weak var goodButton: UIButton!
+
+    var imageView:UIImageView!
+    var selectedImageView:UIImageView!
+    
+    var backId:Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 70))
+        selectedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 70))
+        imageView = UIImageView(image: UIImage(named: "cell0"))
+        selectedImageView = UIImageView(image: UIImage(named: "touch0"))
+        self.backgroundView?.addSubview(imageView)
+        self.selectedBackgroundView?.addSubview(selectedImageView)
     }
     
     override func configure() {
@@ -43,6 +53,13 @@ class CookCell: SACell ,SACellType {
         guard let cellmodel = cellmodel else {
             return
         }
+        if backId != cellmodel.id {
+            let num = cellmodel.id % 4
+            imageView.image = UIImage(named: "cell\(num)")
+            selectedImageView.image = UIImage(named: "touch\(num)")
+            backId = cellmodel.id
+        }
+        
         //imageView.image = UIImage(named: cellmodel.linkUrl)
         nameLabel.text = cellmodel.name
         goodLabel.text = "\(cellmodel.good)"

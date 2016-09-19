@@ -45,9 +45,13 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         retrieveCooks()
     }
     
-    func addGood(model:CookCellModel) {
+    func addGood(cell:CookCell) {
+        guard let model = cell.cellmodel else {
+            return
+        }
         model.good += 1
-        model.bump()
+        //model.bump() //too slow
+        cell.goodLabel.text = "\(model.good)"
         
         Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
             debugPrint(response)
@@ -79,11 +83,10 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                         linkUrl: "cell\(id % 4)",
                         good: json["good"].int ?? 0,
                         selectionHandler: { (cell) in
-                            guard let model = (cell as? CookCell)?.cellmodel else {
+                            guard let cell = (cell as? CookCell) else {
                                 return
                             }
-                            //self.addGood(model)
-                            
+                            self.addGood(cell)
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
@@ -167,10 +170,10 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
     }
 
     @IBAction func cellButtonTapped(sender: UIButton, forEvent event: UIEvent) {
-        guard let model = cookCellForControlEvent(event)?.cellmodel else {
+        guard let cell = cookCellForControlEvent(event) else {
             return
         }
-        addGood(model)
+        addGood(cell)
         print("tapped")
     }
     
