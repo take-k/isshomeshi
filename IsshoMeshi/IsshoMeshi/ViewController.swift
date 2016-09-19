@@ -31,6 +31,16 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let section = GroupManager.sharedInstance.sapporo.sections.first else {
+            return
+        }
+        if section.itemsCount > 0 {
+            GroupManager.sharedInstance.showNextButton()
+        }
+    }
+    
     func update(sender:NSTimer){
         retrieveUsers()
     }

@@ -54,7 +54,7 @@ class GroupManager {
 
         nextButton = UIButton(type: .Custom)
         nextButton.frame = CGRectMake(frame.width - 90 , 64, 90, 80)
-        nextButton.backgroundColor = UIColor.myLightGreen()
+        nextButton.backgroundColor = UIColor.myLightGreen().colorWithAlphaComponent(0.8)
         nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
         nextButton.hidden = true
         
@@ -79,6 +79,9 @@ class GroupManager {
         window.addSubview(collectionView)
         window.addSubview(nextButton)
         window.addSubview(label)
+        guard let viewController = viewController else {
+            return
+        }
         nextButton.addTarget(viewController, action: #selector(ViewController.nextTapped(_:)), forControlEvents: .TouchUpInside)
 
     }
@@ -107,5 +110,8 @@ class GroupManager {
     
     func hideNextButton(){
         nextButton.hidden = true
+    }
+    func showNextButton(){
+        nextButton.hidden = false
     }
 }
