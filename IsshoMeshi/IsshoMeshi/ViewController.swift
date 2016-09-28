@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.checkLogin()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend"), style: .Done, target: self, action: #selector(addUserTapped(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navi"), style: .Done, target: self, action: #selector(pushCookTapped(_:)))
         self.hakuba.reset(Section().reset([]).bump())
         retrieveUsers()
         GroupManager.sharedInstance.viewController = self
@@ -143,6 +143,11 @@ class ViewController: UIViewController {
     
     func sendMembers() {
 
+    }
+    
+ 
+    func pushCookTapped(sender:UIButton) {
+        self.performSegueWithIdentifier("showCookSelect", sender: sender)
     }
     
     func nextTapped(sender:UIButton){
