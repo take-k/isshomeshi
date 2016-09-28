@@ -51,8 +51,7 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
         }
         model.good += 1
         //model.bump() //too slow
-        cell.goodLabel.text = "\(model.good)"
-        
+        cell.configure()
         Router.COOKS_UPDATE(model.id, ["good":model.good]).request.responseJSON(completionHandler: { (response) in
             debugPrint(response)
             switch (response.result) {
@@ -90,6 +89,12 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
+                self.collectionView.visibleCells().forEach({cell in
+                    guard let cell = cell as? CookCell else {
+                        return
+                    }
+                    cell.configure()
+                })
             case .Failure(_):
                 break
             }
