@@ -150,15 +150,22 @@ class ViewController: UIViewController {
         self.performSegueWithIdentifier("showCookSelect", sender: sender)
     }
     
+    
+    var isSendingGroup = false
     func nextTapped(sender:UIButton){
+        if isSendingGroup {
+            return
+        }
         let manager = GroupManager.sharedInstance
         let models = manager.sapporo.sections[0].cellmodels
         let params = ["name":GroupManager.userId,"date":"2011-01-01","location":"どこか",
                       "user_ids":models.map({ (model) -> Int in
                         return (model as! MemberCellModel).id
                       })]
+        isSendingGroup = true
         Router.GROUPS_NEW(params as? [String : AnyObject]).request.responseJSON { (response) in
             debugPrint(response)
+            self.isSendingGroup = false
             switch response.result {
             case .Success(let value):
                 let json = JSON(value)
@@ -166,6 +173,7 @@ class ViewController: UIViewController {
                 manager.hideNextButton()
                 self.performSegueWithIdentifier("showCookSelect", sender: sender)
             case .Failure(_):
+                UIAlertController.alert("送信エラー", message: "通知を遅れませんでした", cancel: nil, ok: "OK", handler: nil)
                 break
             }
         }
