@@ -34,6 +34,9 @@ extension UIColor {
     class func myGreen() -> UIColor{
         return UIColor.hexStr("82ae46", alpha: 1.0)
     }
+    class func myDeepGreen() -> UIColor{
+        return UIColor.hexStr("227e06", alpha: 1.0)
+    }
     class func myWhite() -> UIColor{
         return UIColor.hexStr("f2f2ea", alpha: 1.0)
     }

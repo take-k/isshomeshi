@@ -51,10 +51,12 @@ class GroupManager {
         collectionView = UICollectionView(frame: frame,collectionViewLayout:layout)
         collectionView.backgroundColor = UIColor.myLightGreen()
 
-        nextButton = UIButton(type: .Custom)
+        nextButton = UIButton(type: .System)
         nextButton.frame = CGRectMake(frame.width - 90 , 64, 90, 80)
         nextButton.backgroundColor = UIColor.myLightGreen().colorWithAlphaComponent(0.8)
-        nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
+        //nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
+        nextButton.setTitle("通知を送る", forState: .Normal)
+        nextButton.tintColor = UIColor.myDeepGreen()
         nextButton.hidden = true
         
         label = UILabel(frame: CGRectMake(10,frame.minY,frame.width-20,frame.height))
