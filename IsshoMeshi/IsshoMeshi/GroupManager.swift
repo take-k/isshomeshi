@@ -98,7 +98,13 @@ class GroupManager {
         }
         if index != nil {return}
         
-        let member = MemberCellModel(name: name,id:id, imageUrl: imageUrl,ienow: ienow, selectionHandler: { cell in })
+        let member = MemberCellModel(name: name,id:id, imageUrl: imageUrl,ienow: ienow, selectionHandler: { cell in
+            guard let model = (cell as? MemberCell)?.cellmodel else {
+                return
+            }
+            section.remove(model).bump()
+            
+        })
         
         section.append(member).bump()
         
