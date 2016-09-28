@@ -13,7 +13,6 @@ class GroupManager {
     static let sharedInstance = GroupManager()
     lazy var sapporo: Sapporo = Sapporo(collectionView: self.collectionView)
     
-    var memberModels:[MemberCellModel] = []
     let collectionView :UICollectionView
     let nextButton: UIButton
     let label: UILabel

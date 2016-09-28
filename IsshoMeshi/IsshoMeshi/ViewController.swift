@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
     
-    let friendModels:[FriendCellModel]? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkLogin()
