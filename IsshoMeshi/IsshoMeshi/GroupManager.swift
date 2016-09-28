@@ -57,7 +57,6 @@ class GroupManager {
         //nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
         nextButton.setTitle("通知を送る", forState: .Normal)
         nextButton.tintColor = UIColor.myDeepGreen()
-        nextButton.hidden = true
         
         label = UILabel(frame: CGRectMake(10,frame.minY,frame.width-20,frame.height))
         label.text = "今日のメンバー"
@@ -71,6 +70,7 @@ class GroupManager {
         section.reset([]).bump()
         sapporo.reset(section).bump()
         
+        updateViews()
     }
     
     func addGroupView() {
