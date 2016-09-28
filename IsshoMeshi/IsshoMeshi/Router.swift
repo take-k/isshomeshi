@@ -25,6 +25,10 @@ enum Router {
     case COOKS_NEW([String:AnyObject]?)
     case COOKS_UPDATE(Int,[String:AnyObject]?)
     
+    case NOTIFICATIONS(Int)
+    case NOTIFICATIONS_NEW([String:AnyObject]?)
+    case NOTIFICATIONS_DELETE(Int)
+    
     var request: Request {
         
         let (method, path, parameters) : (Method, String, [String: AnyObject]?) = {
@@ -48,6 +52,13 @@ enum Router {
                 return (.POST, "/cooks.json", params)
             case COOKS_UPDATE(let id,let params):
                 return (.PUT, "/cooks/\(id).json", params)
+                
+            case .NOTIFICATIONS(let userId):
+                return (.GET, "/notifications.json?user_id=\(userId)",nil)
+            case .NOTIFICATIONS_NEW(let params):
+                return (.POST, "/notifications.json",params)
+            case .NOTIFICATIONS_DELETE(let notifId):
+                return (.DELETE, "/notifications/\(notifId)",nil)
             default:
                 return (.GET, "/users/", nil)
             }
