@@ -187,7 +187,7 @@ class ViewController: UIViewController {
     }
     
     func notifTapped(sender:UIButton){
-        let alert = UIAlertController.alert("通知を送る", message: "選択したメンバーに通知を送りますか？", cancel: "いいえ", ok: "はい") { (action) in
+        let alert = UIAlertController.alert("一緒メシに誘う", message: "選択したメンバーを一緒メシに誘いますか？メンバーに通知が送られます。", cancel: "いいえ", ok: "はい") { (action) in
             let manager = GroupManager.sharedInstance
             let models = manager.sapporo.sections[0].cellmodels
 
@@ -210,9 +210,10 @@ class ViewController: UIViewController {
                     debugPrint(response)
                     switch response.result {
                     case .Success(let value):
+                        let ok = UIAlertController.alert("送信完了", message: "一緒メシの誘いました。メンバーがアプリ起動時に通知が表示されます。", cancel: nil, ok: "OK",handler: nil)
+                        self.presentViewController(ok, animated: true, completion: nil)
                         break
                     case .Failure(_):
-                        UIAlertController.alert("送信エラー", message: "\(receiverModel.name)に通知を遅れませんでした", cancel: nil, ok: "OK", handler: nil)
                         break
                     }
                 })
@@ -244,7 +245,6 @@ class ViewController: UIViewController {
                 manager.hideNextButton()
                 self.performSegueWithIdentifier("showCookSelect", sender: sender)
             case .Failure(_):
-                UIAlertController.alert("送信エラー", message: "通知を遅れませんでした", cancel: nil, ok: "OK", handler: nil)
                 break
             }
         }

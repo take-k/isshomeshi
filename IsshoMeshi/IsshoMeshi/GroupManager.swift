@@ -145,7 +145,7 @@ class GroupManager {
     }
     func enableButton(){
         nextButton.enabled = true
-        nextButton.setTitle("通知を送る", forState: .Normal)
+        nextButton.setTitle("メシを誘う", forState: .Normal)
     }
     
     func disableButton() {
