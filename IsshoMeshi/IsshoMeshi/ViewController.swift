@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "logo"))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navi"), style: .Done, target: self, action: #selector(pushCookTapped(_:)))
         self.hakuba.reset(Section().reset([]).bump())
-        retrieveUsers()
         GroupManager.sharedInstance.viewController = self
         GroupManager.sharedInstance.addGroupView()
         tableView.contentInset.top = -60
@@ -37,6 +36,8 @@ class ViewController: UIViewController {
         if section.itemsCount > 0 {
             GroupManager.sharedInstance.showNextButton()
         }
+        retrieveUsers()
+        retrieveNotifications()
     }
     
     func update(sender:NSTimer){
