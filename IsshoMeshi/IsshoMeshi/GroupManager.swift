@@ -102,14 +102,24 @@ class GroupManager {
                 return
             }
             section.remove(model).bump()
-            
+            self.updateViews()
         })
-        
         section.append(member).bump()
-        
+        updateViews()
+    }
+    
+    func updateViews (){
+        guard let section = sapporo.sections.first else {
+            label.hidden = false
+            nextButton.hidden = true
+            return
+        }
         if section.itemsCount > 0 {
             label.hidden = true
             nextButton.hidden = false
+        }else {
+            label.hidden = false
+            nextButton.hidden = true
         }
     }
     
