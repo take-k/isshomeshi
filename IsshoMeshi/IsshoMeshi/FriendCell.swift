@@ -40,17 +40,17 @@ class FriendCell: Cell,CellType {
         }
         
         nameLabel.text = cellmodel.name
+        
         badgeLabel.text = "\(cellmodel.ienow)"
-//        badgeView.hidden = cellmodel.ienow == 0
+        //badgeView.hidden = cellmodel.ienow == 0
+        var scaled:CGFloat = 0.4 + CGFloat(cellmodel.ienow) * 0.005
+        scaled = scaled < 1.2 ? scaled : 1.2
+        badgeView.transform = CGAffineTransformMakeScale(scaled, scaled)
+        
         if let url = NSURL(string: cellmodel.imageUrl) {
             userImageView.kf_setImageWithURL(url, placeholderImage: UIImage(named: "men"), optionsInfo: nil, progressBlock: nil, completionHandler: nil)
         }
         userImageView.layer.cornerRadius = 25
-        
-    }
-    
-    override func willDisplay(tableView: UITableView) {
-        super.willDisplay(tableView)
         
     }
 }
