@@ -29,6 +29,18 @@ class GroupManager {
             defaults.synchronize()
         }
     }
+    
+    static var userName:String {
+        get {
+            defaults.registerDefaults(["userName":""])
+            return defaults.stringForKey("userName") ?? ""
+        }
+        set {
+            defaults.setObject(newValue, forKey: "userName")
+            defaults.synchronize()
+        }
+    }
+    
     var _myGroupId:Int? = nil
     var myGroupId:Int? {
         get {
@@ -83,7 +95,7 @@ class GroupManager {
         guard let viewController = viewController else {
             return
         }
-        nextButton.addTarget(viewController, action: #selector(ViewController.nextTapped(_:)), forControlEvents: .TouchUpInside)
+        nextButton.addTarget(viewController, action: #selector(ViewController.notifTapped(_:)), forControlEvents: .TouchUpInside)
 
     }
     

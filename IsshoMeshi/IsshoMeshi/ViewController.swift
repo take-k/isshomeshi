@@ -73,6 +73,7 @@ class ViewController: UIViewController {
                 
                 if GroupManager.userId == 0 {
                     GroupManager.userId = json["id"].int ?? 0
+                    GroupManager.userName = json["name"].string ?? ""
                 }
                 
                 self.retrieveUsers()
@@ -150,6 +151,39 @@ class ViewController: UIViewController {
         self.performSegueWithIdentifier("showCookSelect", sender: sender)
     }
     
+    func notifTapped(sender:UIButton){
+        let alert = UIAlertController.alert("通知を送る", message: "選択したメンバーに通知を送りますか？", cancel: "いいえ", ok: "はい") { (action) in
+            let manager = GroupManager.sharedInstance
+            let models = manager.sapporo.sections[0].cellmodels
+
+            models.forEach({ (model) in
+                guard let receiverModel = model as? MemberCellModel else {
+                    return
+                }
+                let params:[String:AnyObject] = [
+                    "title":"一緒メシの誘いが来ました",
+                    "message":"\(GroupManager.userName)から一緒メシの誘いが来ました。",
+                    "sender_id":GroupManager.userId,
+                    "receiver_id":receiverModel.id,
+                    "sender_name":GroupManager.userName,
+                    "receiver_name":receiverModel.name
+                ]
+                
+                Router.NOTIFICATIONS_NEW(params).request.responseJSON(completionHandler: { (response) in
+                    debugPrint(response)
+                    switch response.result {
+                    case .Success(let value):
+                        break
+                    case .Failure(_):
+                        UIAlertController.alert("送信エラー", message: "\(receiverModel.name)に通知を遅れませんでした", cancel: nil, ok: "OK", handler: nil)
+                        break
+                    }
+                })
+                
+            })
+        }
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
     var isSendingGroup = false
     func nextTapped(sender:UIButton){
