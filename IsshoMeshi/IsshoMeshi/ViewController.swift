@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     
     func update(sender:NSTimer){
         retrieveUsers()
+        retrieveNotifications()
     }
     
     func checkLogin (){
@@ -130,6 +131,39 @@ class ViewController: UIViewController {
         }
     }
     
+    func retrieveNotifications(){
+        Router.NOTIFICATIONS(GroupManager.userId).request.responseJSON { (response) in
+            debugPrint(response)
+            switch response.result {
+            case .Success(let value):
+                let json = JSON(value)
+                json.forEach({ (key,json) in
+                    let alert = UIAlertController.alert(
+                        json["title"].string ?? "一緒メシの誘いが来ました",
+                        message: json["message"].string ?? "一緒メシの誘いが来ました",
+                        cancel: nil, ok: "OK", handler: { (action) in
+                            guard let notifId = json["id"].int else {
+                                return
+                            }
+                            Router.NOTIFICATIONS_DELETE(notifId).request.responseJSON(completionHandler: { (response) in
+                                debugPrint(response)
+                                switch response.result {
+                                case .Success(let value):
+                                    break
+                                case .Failure(_):
+                                    break
+                                }
+                            })
+                    })
+                    self.presentViewController(alert, animated: true, completion: nil)
+                })
+                break
+            case .Failure(_):
+                break
+            }
+        }
+    }
+    
     func sendIenow(num:Int) {
         Router.USERS_COUNTER_UPDATE(GroupManager.userId,["ienow":num]).request.responseJSON { (response) in
             debugPrint(response)
@@ -155,6 +189,8 @@ class ViewController: UIViewController {
         let alert = UIAlertController.alert("通知を送る", message: "選択したメンバーに通知を送りますか？", cancel: "いいえ", ok: "はい") { (action) in
             let manager = GroupManager.sharedInstance
             let models = manager.sapporo.sections[0].cellmodels
+
+            manager.disableButton()
 
             models.forEach({ (model) in
                 guard let receiverModel = model as? MemberCellModel else {

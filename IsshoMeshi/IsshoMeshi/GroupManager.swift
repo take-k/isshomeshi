@@ -67,7 +67,6 @@ class GroupManager {
         nextButton.frame = CGRectMake(frame.width - 90 , 64, 90, 80)
         nextButton.backgroundColor = UIColor.myLightGreen().colorWithAlphaComponent(0.8)
         //nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
-        nextButton.setTitle("通知を送る", forState: .Normal)
         nextButton.tintColor = UIColor.myDeepGreen()
         
         label = UILabel(frame: CGRectMake(10,frame.minY,frame.width-20,frame.height))
@@ -135,6 +134,7 @@ class GroupManager {
             label.hidden = false
             nextButton.hidden = true
         }
+        enableButton()
     }
     
     func hideNextButton(){
@@ -142,5 +142,14 @@ class GroupManager {
     }
     func showNextButton(){
         nextButton.hidden = false
+    }
+    func enableButton(){
+        nextButton.enabled = true
+        nextButton.setTitle("通知を送る", forState: .Normal)
+    }
+    
+    func disableButton() {
+        nextButton.enabled = false
+        nextButton.setTitle("送信済み", forState: .Normal)
     }
 }
