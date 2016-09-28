@@ -45,6 +45,15 @@ class CookCell: SACell ,SACellType {
         selectedImageView = UIImageView(image: UIImage(named: "touch0"))
         self.backgroundView?.addSubview(imageView)
         self.selectedBackgroundView?.addSubview(selectedImageView)
+        //contraint
+        /*
+        self.backgroundView?.addConstraints([
+            NSLayoutConstraint(item: imageView, attribute: .Top, relatedBy: .Equal, toItem: self.backgroundView, attribute: .Top, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: imageView, attribute: .Left, relatedBy: .Equal, toItem: self.backgroundView, attribute: .Left, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: imageView, attribute: .Right, relatedBy: .Equal, toItem: self.backgroundView, attribute: .Right, multiplier: 1.0, constant: 0),
+            NSLayoutConstraint(item: imageView, attribute: .Bottom, relatedBy: .Equal, toItem: self.backgroundView, attribute: .Bottom, multiplier: 1.0, constant: 0)
+            ])
+ */
     }
     
     override func configure() {
