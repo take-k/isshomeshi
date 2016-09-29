@@ -75,7 +75,7 @@ class CookCell: SACell ,SACellType {
         
         var scale:CGFloat = 1.0 + CGFloat(cellmodel.good) * 0.001
         scale = scale < 1.15 ? scale : 1.15
-        transform = CGAffineTransformMakeScale(scale, scale)
+        //transform = CGAffineTransformMakeScale(scale, scale)
 
     }
     
