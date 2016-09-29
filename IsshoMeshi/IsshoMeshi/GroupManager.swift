@@ -57,23 +57,27 @@ class GroupManager {
         let layout = SAFlowLayout()
         layout.scrollDirection = .Horizontal
         layout.itemSize = CGSizeMake(50, 50)
-        let width = UIApplication.sharedApplication().keyWindow?.frame.width ?? 100
-        let frame = CGRectMake(0, 64, width, 80)
+        let frame = CGRectMake(0, 64, UIApplication.sharedApplication().keyWindow?.frame.width ?? 100, 80)
         
         collectionView = UICollectionView(frame: frame,collectionViewLayout:layout)
         collectionView.backgroundColor = UIColor.myLightGreen()
 
         nextButton = UIButton(type: .System)
-        nextButton.frame = CGRectMake(frame.width - 90 , 64, 90, 80)
+        nextButton.frame = CGRectMake(frame.width - 90 , frame.minY, 90, frame.height)
         nextButton.backgroundColor = UIColor.myLightGreen().colorWithAlphaComponent(0.8)
         //nextButton.setImage(UIImage(named: "navi"), forState: .Normal)
         nextButton.tintColor = UIColor.myDeepGreen()
+        //nextButton.layer.borderColor = UIColor.myDeepGreen().CGColor
+        //nextButton.layer.borderWidth = 1
+        //nextButton.layer.cornerRadius = 2
         
         label = UILabel(frame: CGRectMake(10,frame.minY,frame.width-20,frame.height))
         label.text = "今日のメンバー"
         label.textColor = UIColor.myGray()
         label.font = UIFont.boldSystemFontOfSize(20)
         
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: nextButton.frame.width)
+        collectionView.showsHorizontalScrollIndicator = false
         sapporo.registerCellByNib(MemberCell)
         sapporo.setLayout(layout)
         
@@ -145,7 +149,7 @@ class GroupManager {
     }
     func enableButton(){
         nextButton.enabled = true
-        nextButton.setTitle("メシを誘う", forState: .Normal)
+        nextButton.setTitle("メシに誘う", forState: .Normal)
     }
     
     func disableButton() {
