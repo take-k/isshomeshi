@@ -23,10 +23,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.8980392157" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="60" id="n8C-sw-Djq" customClass="FriendCell" customModule="IsshoMeshi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="65" width="1000" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8C-sw-Djq" id="lEa-zy-1Il">
-                                            <frame key="frameInset" width="375" height="59"/>
+                                            <frame key="frameInset" width="1000" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utk-VG-gaZ">
@@ -213,7 +213,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="tCn-Ah-8Xf" customClass="HeaderView" customModule="IsshoMeshi" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menulogo" translatesAutoresizingMaskIntoConstraints="NO" id="2bl-PP-5Rq"/>
@@ -223,8 +223,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-r8-yAi">
-                                            <state key="normal" backgroundImage="menuadd"/>
-                                            <state key="highlighted" image="now_push"/>
+                                            <state key="normal" image="menuadd"/>
                                             <connections>
                                                 <action selector="addCookTapped:" destination="P8n-ow-Iq1" eventType="touchUpInside" id="qFj-2a-eWf"/>
                                             </connections>
@@ -245,7 +244,7 @@
                                     </connections>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="2af-ui-KDh" customClass="FooterView" customModule="IsshoMeshi" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="250" width="1000" height="90"/>
+                                    <rect key="frame" x="0.0" y="250" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-9d-qis">
