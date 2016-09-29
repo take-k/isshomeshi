@@ -86,6 +86,11 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
                                 return
                             }
                             self.addGood(cell)
+                            
+                            guard let indexPath = self.collectionView.indexPathForCell(cell) else {
+                                return
+                            }
+                            self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
                     })
                 })
                 self.sapporo.sections[0].reset(models).bump()
