@@ -106,11 +106,11 @@ class ViewController: UIViewController {
     }
     
     func retrieveUsers(){
-        self.activityIndicator.stopAnimating()
         Router.USERS.request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
             case .Success(let value):
+                self.activityIndicator.stopAnimating()
                 let json = JSON(value)
                 let friendModels = json.map({ (key,json) -> FriendCellModel in
                     let friend = FriendCellModel(
