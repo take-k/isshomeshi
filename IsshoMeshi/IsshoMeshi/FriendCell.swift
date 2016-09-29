@@ -43,7 +43,7 @@ class FriendCell: Cell,CellType {
         
         badgeLabel.text = "\(cellmodel.ienow)"
         //badgeView.hidden = cellmodel.ienow == 0
-        var scaled:CGFloat = 0.4 + CGFloat(cellmodel.ienow) * 0.005
+        var scaled:CGFloat = 0.5 + CGFloat(cellmodel.ienow) * 0.01
         scaled = scaled < 1.2 ? scaled : 1.2
         badgeView.transform = CGAffineTransformMakeScale(scaled, scaled)
         
