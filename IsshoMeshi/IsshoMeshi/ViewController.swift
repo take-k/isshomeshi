@@ -145,27 +145,27 @@ class ViewController: UIViewController {
             switch response.result {
             case .Success(let value):
                 let json = JSON(value)
-                json.forEach({ (key,json) in
-                    let alert = UIAlertController.alert(
-                        json["title"].string ?? "一緒メシの誘いが来ました",
-                        message: json["message"].string ?? "一緒メシの誘いが来ました",
-                        cancel: nil, ok: "OK", handler: { (action) in
-                            guard let notifId = json["id"].int else {
-                                return
-                            }
-                            Router.NOTIFICATIONS_DELETE(notifId).request.responseJSON(completionHandler: { (response) in
-                                debugPrint(response)
-                                switch response.result {
-                                case .Success(let value):
-                                    break
-                                case .Failure(_):
-                                    break
-                                }
-                            })
-                    })
-                    self.presentViewController(alert, animated: true, completion: nil)
+                guard let notif = json.first?.1 else {
+                    return
+                }
+                guard let notifId = notif["id"].int else {
+                    return
+                }
+                Router.NOTIFICATIONS_DELETE(notifId).request.responseJSON(completionHandler: { (response) in
+                    debugPrint(response)
+                    switch response.result {
+                    case .Success(_):
+                        break
+                    case .Failure(_):
+                        break
+                    }
                 })
-                break
+
+                let alert = UIAlertController.alert(
+                    notif["title"].string ?? "一緒メシの誘いが来ました",
+                    message: notif["message"].string ?? "一緒メシの誘いが来ました",
+                    cancel: nil, ok: "OK", handler: nil)
+                self.presentViewController(alert, animated: true, completion: nil)
             case .Failure(_):
                 break
             }
