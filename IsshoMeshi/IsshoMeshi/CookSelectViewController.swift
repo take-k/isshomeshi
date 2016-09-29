@@ -159,6 +159,18 @@ class CookSelectViewController: UIViewController ,SapporoDelegate{
             return
         }
         
+        let count = sapporo.sections[0].cellmodels.filter { (cellmodel) -> Bool in
+            guard let cellmodel = cellmodel as? CookCellModel else {
+                return false
+            }
+            return cellmodel.good == cmodel.good
+        }.count
+        
+        if count != 1 {
+            let alert = UIAlertController.alert("投票結果が出せません", message: "最も投票されている一緒メシが複数有ります。どれか選んで投票してね！", cancel: nil, ok: "OK", handler: nil)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
         let alert = UIAlertController.alert("今日の一緒メシは\n\"\(cmodel.name)\"\nに決定！", message: "レシピを選んで早速作ってみよう", cancel: "キャンセル", ok: "レシピを調べる") { (action) in
             guard let encodedBody = cmodel.name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet()) ,url = NSURL(string: "http://cookpad.com/search/\(encodedBody)") else {
                 let alert = UIAlertController.alert("レシピを探せません。", message: "正しい料理名を入力してください", cancel: nil, ok: "OK", handler: nil)
