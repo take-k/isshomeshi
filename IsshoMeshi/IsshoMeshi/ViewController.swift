@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private lazy var hakuba: Hakuba = Hakuba(tableView: self.tableView)
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkLogin()
@@ -38,6 +40,10 @@ class ViewController: UIViewController {
         }
         retrieveUsers()
         retrieveNotifications()
+        
+        if hakuba.sections.first?.count <= 0 {
+            self.activityIndicator.startAnimating()
+        }
     }
     
     func update(sender:NSTimer){
@@ -100,6 +106,7 @@ class ViewController: UIViewController {
     }
     
     func retrieveUsers(){
+        self.activityIndicator.stopAnimating()
         Router.USERS.request.responseJSON { (response) in
             debugPrint(response)
             switch response.result {
